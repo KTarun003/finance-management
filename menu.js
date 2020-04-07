@@ -1,6 +1,6 @@
 'use strict';
 const path = require('path');
-const {app, Menu, shell} = require('electron');
+const {app, Menu} = require('electron');
 const {
 	is,
 	appMenu,
@@ -18,11 +18,11 @@ const showPreferences = () => {
 const helpSubmenu = [
 	openUrlMenuItem({
 		label: 'Website',
-		url: 'https://github.com/sindresorhus/electron-boilerplate'
+		url: 'https://github.com/KTarun003/finance-management'
 	}),
 	openUrlMenuItem({
 		label: 'Source Code',
-		url: 'https://github.com/sindresorhus/electron-boilerplate'
+		url: 'https://github.com/KTarun003/finance-management'
 	}),
 	{
 		label: 'Report an Issue…',
