@@ -30,38 +30,43 @@ let today = `${ye}-${mo}-${da}`;
 let i = 0;
 let element;
 let stat = ``;
-function getData() {
-	con.connect(function (err) {
+let res;
+con.connect(function (err) {
+	if (err)
+		throw err;
+	con.query(`SELECT name,principle,interest,status FROM loan `, function (err, result) {
 		if (err)
 			throw err;
-		con.query(`SELECT name,principle,interest,status FROM profit where rdate = ${today}`, function (err, result) {
-		if (err)
-				throw err;
-		for (record of result) {
+		res = result
+	});
+});
+function getData() {
+		for (record of res) {
+			console.log(record)
 			switch (i) {
 				case 0 : {
 					element = document.getElementById('row1_name')
-					element.innerHTML=record.name;
+					element.innerHTML=`${record.name}`;
 					element = document.getElementById('row1_principle')
-					element.innerHTML=record.principle;
+					element.innerHTML=`${record.principle}`;
 					element = document.getElementById('row1_interest')
-					element.innerHTML=record.interest;
+					element.innerHTML=`${record.interest}`;
 					element = document.getElementById('row1_status')
-					stat = record.status;
+					stat =`${record.status}` ;
 					switch (stat) {
-						case 0 : {
+						case '0' : {
 							element.innerHTML='<div  class="badge badge-success" >Principle Paid</div>';
 							break;
 						}
-						case 1 : {
+						case '1' : {
 							element.innerHTML='<div  class="badge badge-info" >Principle Paid</div>';
 							break;
 						}
-						case 2 : {
+						case '2' : {
 							element.innerHTML='<div  class="badge badge-warning" >Interest Paid</div>';
 							break;
 						}
-						case 3 : {
+						case '3' : {
 							element.innerHTML='<div  class="badge badge-danger" >Not Paid</div>';
 							break;
 						}
@@ -73,27 +78,27 @@ function getData() {
 				}
 				case 1 : {
 					element = document.getElementById('row2_name')
-					element.innerHTML=record.name;
+					element.innerHTML=`${record.name}`;
 					element = document.getElementById('row2_principle')
-					element.innerHTML=record.principle;
+					element.innerHTML=`${record.principle}`;
 					element = document.getElementById('row2_interest')
-					element.innerHTML=record.interest;
+					element.innerHTML=`${record.interest}`;
 					element = document.getElementById('row2_status')
-					stat = record.status;
+					stat =`${record.status}` ;
 					switch (stat) {
-						case 0 : {
+						case '0' : {
 							element.innerHTML='<div  class="badge badge-success" >Principle Paid</div>';
 							break;
 						}
-						case 1 : {
+						case '1' : {
 							element.innerHTML='<div  class="badge badge-info" >Principle Paid</div>';
 							break;
 						}
-						case 2 : {
+						case '2' : {
 							element.innerHTML='<div  class="badge badge-warning" >Interest Paid</div>';
 							break;
 						}
-						case 3 : {
+						case '3' : {
 							element.innerHTML='<div  class="badge badge-danger" >Not Paid</div>';
 							break;
 						}
@@ -105,27 +110,27 @@ function getData() {
 				}
 				case 2 : {
 					element = document.getElementById('row3_name')
-					element.innerHTML=record.name;
+					element.innerHTML=`${record.name}`;
 					element = document.getElementById('row3_principle')
-					element.innerHTML=record.principle;
+					element.innerHTML=`${record.principle}`;
 					element = document.getElementById('row3_interest')
-					element.innerHTML=record.interest;
+					element.innerHTML=`${record.interest}`;
 					element = document.getElementById('row3_status')
-					stat = record.status;
+					stat =`${record.status}` ;
 					switch (stat) {
-						case 0 : {
+						case '0' : {
 							element.innerHTML='<div  class="badge badge-success" >Principle Paid</div>';
 							break;
 						}
-						case 1 : {
+						case '1' : {
 							element.innerHTML='<div  class="badge badge-info" >Principle Paid</div>';
 							break;
 						}
-						case 2 : {
+						case '2' : {
 							element.innerHTML='<div  class="badge badge-warning" >Interest Paid</div>';
 							break;
 						}
-						case 3 : {
+						case '3' : {
 							element.innerHTML='<div  class="badge badge-danger" >Not Paid</div>';
 							break;
 						}
@@ -137,27 +142,27 @@ function getData() {
 				}
 				case 3 : {
 					element = document.getElementById('row4_name')
-					element.innerHTML=record.name;
+					element.innerHTML=`${record.name}`;
 					element = document.getElementById('row4_principle')
-					element.innerHTML=record.principle;
+					element.innerHTML=`${record.principle}`;
 					element = document.getElementById('row4_interest')
-					element.innerHTML=record.interest;
+					element.innerHTML=`${record.interest}`;
 					element = document.getElementById('row4_status')
-					stat = record.status;
+					stat =`${record.status}` ;
 					switch (stat) {
-						case 0 : {
-							element.innerHTML='<div  class="badge badge-success" >Principle Paid</div>';
+						case '0' : {
+							element.innerHTML='<div  class="badge badge-success" >Paid</div>';
 							break;
 						}
-						case 1 : {
+						case '1' : {
 							element.innerHTML='<div  class="badge badge-info" >Principle Paid</div>';
 							break;
 						}
-						case 2 : {
+						case '2' : {
 							element.innerHTML='<div  class="badge badge-warning" >Interest Paid</div>';
 							break;
 						}
-						case 3 : {
+						case '3' : {
 							element.innerHTML='<div  class="badge badge-danger" >Not Paid</div>';
 							break;
 						}
@@ -170,8 +175,7 @@ function getData() {
 			}
 			i++;
 		}
-		console.log(result);
-		});
-	});
+		console.log(res);
+
 
 }
