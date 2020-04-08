@@ -1,14 +1,13 @@
 {
-	"name": "app-name",
-	"productName": "App Name",
-	"version": "0.0.0",
-	"description": "The best app ever",
+	"name": "Finance-Management",
+	"productName": "Finance Management",
+	"version": "1.0.0",
+	"description": "App used for managing a finance",
 	"license": "MIT",
-	"repository": "sindresorhus/electron-boilerplate",
+	"repository": "KTarun003/finance-management",
 	"author": {
-		"name": "Your Name",
-		"email": "user@gmail.com",
-		"url": "https://sindresorhus.com"
+		"name": "K Tarun Reddy",
+		"email": "tarunreddykreddy@gmail.com"
 	},
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
@@ -25,7 +24,8 @@
 		"electron-store": "^5.1.0",
 		"electron-unhandled": "^3.0.0",
 		"electron-updater": "^4.0.6",
-		"electron-util": "^0.13.0"
+		"electron-util": "^0.13.0",
+		"mysql": "^2.18.1"
 	},
 	"devDependencies": {
 		"electron": "^7.1.1",
@@ -44,9 +44,9 @@
 		"releaseDraft": false
 	},
 	"build": {
-		"appId": "com.company.AppName",
+		"appId": "com.EssSolutions.FinanceManagement",
 		"mac": {
-			"category": "public.app-category.social-networking",
+			"category": "public.app-category.tools",
 			"darkModeSupport": true
 		},
 		"dmg": {

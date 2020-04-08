@@ -11,6 +11,8 @@
 	<meta name="description" content="This is an example dashboard created using build-in elements and components.">
 	<meta name="msapplication-tap-highlight" content="no">
 	<link href="./main.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="assets/images/file-icon.png">
+	<script src="loadData.js"></script>
 </head>
 
 <body>
@@ -39,6 +41,15 @@
 			</div>
 			<div class="app-header__menu">
 				<span>
+                    <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+			</div>
+			<div class="app-header__content">
+				<span>
 					<button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
 						<span class="btn-icon-wrapper">
 							<i class="fa fa-ellipsis-v fa-w-6"></i>
@@ -46,21 +57,7 @@
 					</button>
 				</span>
 			</div>
-			<div class="app-header__content">
-				<div class="app-header-left">
-					<div class="search-wrapper">
-						<div class="input-holder">
-							<input type="text" class="search-input" placeholder="Type to search">
-							<button class="search-icon"><span></span></button>
-						</div>
-						<button class="close"></button>
-					</div>
 
-				</div>
-				<div class="app-header-right">
-
-				</div>
-			</div>
 		</div>
 
 		<div class="app-main">
@@ -301,7 +298,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="main-card mb-3 card">
-								<div class="card-header">Active Users
+								<div class="card-header">Today's Pending Loans
 									<div class="btn-actions-pane-right">
 										<div role="group" class="btn-group-sm btn-group">
 											<button class="active btn btn-focus">Last Week</button>
@@ -310,122 +307,91 @@
 									</div>
 								</div>
 								<div class="table-responsive">
-									<table class="align-middle mb-0 table table-borderless table-striped table-hover">
+									<table class="align-middle mb-0 table table-borderless table-striped table-hover" onload="getData()">
 										<thead>
 											<tr>
-												<th class="text-center">#</th>
 												<th>Name</th>
-												<th class="text-center">City</th>
+												<th class="text-center">Principle</th>
+												<th class="text-center">Interest</th>
 												<th class="text-center">Status</th>
-												<th class="text-center">Actions</th>
+												<th class="text-center">Recover</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<td class="text-center text-muted">#345</td>
-												<td>
-													<div class="widget-content p-0">
-														<div class="widget-content-wrapper">
-															<div class="widget-content-left mr-3">
-																<div class="widget-content-left">
-																	<img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
-																</div>
-															</div>
-															<div class="widget-content-left flex2">
-																<div class="widget-heading">John Doe</div>
-																<div class="widget-subheading opacity-7">Web Developer</div>
-															</div>
+										<tbody id="dash-table" >
+										<tr>
+											<td>
+												<div class="widget-content p-0">
+													<div class="widget-content-wrapper">
+														<div class="widget-content-left flex2">
+															<div id="row1_name" class="widget-heading" ></div>
 														</div>
 													</div>
-												</td>
-												<td class="text-center">Madrid</td>
-												<td class="text-center">
-													<div class="badge badge-warning">Pending</div>
-												</td>
-												<td class="text-center">
-													<button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-center text-muted">#347</td>
-												<td>
-													<div class="widget-content p-0">
-														<div class="widget-content-wrapper">
-															<div class="widget-content-left mr-3">
-																<div class="widget-content-left">
-																	<img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
-																</div>
-															</div>
-															<div class="widget-content-left flex2">
-																<div class="widget-heading">Ruben Tillman</div>
-																<div class="widget-subheading opacity-7">Etiam sit amet orci eget</div>
-															</div>
+												</div>
+											</td>
+											<td id="row1_principle" class="text-center" ></td>
+											<td id="row1_interest" class="text-center" ></td>
+											<td id="row1_status" class="text-center" ></td>
+											<td class="text-center">
+												<button type="button" id="PopoverCustomT-11" class="btn btn-primary btn-sm"><a href="Interest.html">Interest</a></button>
+												<button type="button" id="PopoverCustomT-12" class="btn btn-primary btn-sm"><a href="Whole.html">Both</a></button>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="widget-content p-0">
+													<div class="widget-content-wrapper">
+														<div class="widget-content-left flex2">
+															<div id="row2_name" class="widget-heading" ></div>
 														</div>
 													</div>
-												</td>
-												<td class="text-center">Berlin</td>
-												<td class="text-center">
-													<div class="badge badge-success">Completed</div>
-												</td>
-												<td class="text-center">
-													<button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Details</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-center text-muted">#321</td>
-												<td>
-													<div class="widget-content p-0">
-														<div class="widget-content-wrapper">
-															<div class="widget-content-left mr-3">
-																<div class="widget-content-left">
-																	<img width="40" class="rounded-circle" src="assets/images/avatars/2.jpg" alt="">
-																</div>
-															</div>
-															<div class="widget-content-left flex2">
-																<div class="widget-heading">Elliot Huber</div>
-																<div class="widget-subheading opacity-7">Lorem ipsum dolor sic</div>
-															</div>
+												</div>
+											</td>
+											<td id="row2_principle" class="text-center" ></td>
+											<td id="row2_interest" class="text-center" ></td>
+											<td id="row2_status" class="text-center" ></td>
+											<td class="text-center">
+												<button type="button" id="PopoverCustomT-21" class="btn btn-primary btn-sm"><a href="Interest.html">Interest</a></button>
+												<button type="button" id="PopoverCustomT-22" class="btn btn-primary btn-sm"><a href="Whole.html">Both</a></button>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="widget-content p-0">
+													<div class="widget-content-wrapper">
+														<div class="widget-content-left flex2">
+															<div id="row3_name" class="widget-heading" ></div>
 														</div>
 													</div>
-												</td>
-												<td class="text-center">London</td>
-												<td class="text-center">
-													<div class="badge badge-danger">In Progress</div>
-												</td>
-												<td class="text-center">
-													<button type="button" id="PopoverCustomT-3" class="btn btn-primary btn-sm">Details</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-center text-muted">#55</td>
-												<td>
-													<div class="widget-content p-0">
-														<div class="widget-content-wrapper">
-															<div class="widget-content-left mr-3">
-																<div class="widget-content-left">
-																	<img width="40" class="rounded-circle" src="assets/images/avatars/1.jpg" alt=""></div>
-															</div>
-															<div class="widget-content-left flex2">
-																<div class="widget-heading">Vinnie Wagstaff</div>
-																<div class="widget-subheading opacity-7">UI Designer</div>
-															</div>
+												</div>
+											</td>
+											<td id="row3_principle" class="text-center" ></td>
+											<td id="row3_interest" class="text-center" ></td>
+											<td id="row3_status" class="text-center" ></td>
+											<td class="text-center">
+												<button type="button" id="PopoverCustomT-31" class="btn btn-primary btn-sm"><a href="Interest.html">Interest</a></button>
+												<button type="button" id="PopoverCustomT-32" class="btn btn-primary btn-sm"><a href="Whole.html">Both</a></button>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="widget-content p-0">
+													<div class="widget-content-wrapper">
+														<div class="widget-content-left flex2">
+															<div id="row4_name" class="widget-heading" ></div>
 														</div>
 													</div>
-												</td>
-												<td class="text-center">Amsterdam</td>
-												<td class="text-center">
-													<div class="badge badge-info">On Hold</div>
-												</td>
-												<td class="text-center">
-													<button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Details</button>
-												</td>
-											</tr>
+												</div>
+											</td>
+											<td id="row4_principle" class="text-center"></td>
+											<td id="row4_interest" class="text-center" ></td>
+											<td id="row4_status" class="text-center" ></td>
+											<td class="text-center">
+												<button type="button" id="PopoverCustomT-41" class="btn btn-primary btn-sm"><a href="Interest.html">Interest</a></button>
+												<button type="button" id="PopoverCustomT-42" class="btn btn-primary btn-sm"><a href="Whole.html">Both</a></button>
+											</td>
+										</tr>
 										</tbody>
 									</table>
-								</div>
-								<div class="d-block text-center card-footer">
-									<button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-									<button class="btn-wide btn btn-success">Save</button>
 								</div>
 							</div>
 						</div>
@@ -519,10 +485,10 @@
 				</div>
 
 			</div>
-			<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
 		</div>
 	</div>
-	<script type="text/javascript" src="./assets/scripts/main.js"></script>
+
 </body>
 
 </html>
