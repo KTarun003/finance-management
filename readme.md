@@ -5,7 +5,7 @@
 
 - Add New record of a Loan
 - Recover the Loan
-- Show history of Recoveries
+- Show History of Recoveries
 - Show Daily Profit person-wise
 - Show Daily Profit date-wise
 - Show Profit month-wise
