@@ -6,7 +6,6 @@ const {is} = require('electron-util');
 const unhandled = require('electron-unhandled');
 const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
-const config = require('./config');
 const menu = require('./menu');
 
 
@@ -43,6 +42,7 @@ const createMainWindow = async () => {
 	});
 
 	win.on('ready-to-show', () => {
+		win.maximize();
 		win.show();
 	});
 

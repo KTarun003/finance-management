@@ -8,11 +8,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Finance Management</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-	<meta name="description" content="This is an example dashboard created using build-in elements and components.">
+	<meta name="description" content="This is an app to manage your finance business.">
 	<meta name="msapplication-tap-highlight" content="no">
 	<link href="./main.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="assets/images/file-icon.png">
 	<script src="loadData.js"></script>
+	<style>
+		.btn-link { color: #ffffff; } /* CSS link color */
+	</style>
 </head>
 
 <body>
@@ -48,15 +51,7 @@
                     </button>
                 </span>
 			</div>
-			<div class="app-header__content">
-				<span>
-					<button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-						<span class="btn-icon-wrapper">
-							<i class="fa fa-ellipsis-v fa-w-6"></i>
-						</span>
-					</button>
-				</span>
-			</div>
+
 
 		</div>
 
@@ -174,11 +169,11 @@
 							<div class="card mb-3 widget-content bg-midnight-bloom">
 								<div class="widget-content-wrapper text-white">
 									<div class="widget-content-left">
-										<div class="widget-heading">Total Orders</div>
-										<div class="widget-subheading">Last year expenses</div>
+										<div class="widget-heading">No Of Loans</div>
+										<div class="widget-subheading">Total Loans Given</div>
 									</div>
 									<div class="widget-content-right">
-										<div class="widget-numbers text-white"><span>1896</span></div>
+										<div class="widget-numbers text-white" id="NO_Loans"></div>
 									</div>
 								</div>
 							</div>
@@ -187,11 +182,11 @@
 							<div class="card mb-3 widget-content bg-arielle-smile">
 								<div class="widget-content-wrapper text-white">
 									<div class="widget-content-left">
-										<div class="widget-heading">Clients</div>
-										<div class="widget-subheading">Total Clients Profit</div>
+										<div class="widget-heading">Total Principle</div>
+										<div class="widget-subheading">Principle Amount Given</div>
 									</div>
 									<div class="widget-content-right">
-										<div class="widget-numbers text-white"><span>$ 568</span></div>
+										<div class="widget-numbers text-white" id="Principle"><span></span></div>
 									</div>
 								</div>
 							</div>
@@ -200,28 +195,16 @@
 							<div class="card mb-3 widget-content bg-grow-early">
 								<div class="widget-content-wrapper text-white">
 									<div class="widget-content-left">
-										<div class="widget-heading">Followers</div>
-										<div class="widget-subheading">People Interested</div>
+										<div class="widget-heading">Total Interest</div>
+										<div class="widget-subheading">Interest Amount Given</div>
 									</div>
 									<div class="widget-content-right">
-										<div class="widget-numbers text-white"><span>46%</span></div>
+										<div class="widget-numbers text-white" id="Interest"><span></span></div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="d-xl-none d-lg-block col-md-6 col-xl-4">
-							<div class="card mb-3 widget-content bg-premium-dark">
-								<div class="widget-content-wrapper text-white">
-									<div class="widget-content-left">
-										<div class="widget-heading">Products Sold</div>
-										<div class="widget-subheading">Revenue streams</div>
-									</div>
-									<div class="widget-content-right">
-										<div class="widget-numbers text-warning"><span>$14M</span></div>
-									</div>
-								</div>
-							</div>
-						</div>
+
 					</div>
 
 					<div class="row">
@@ -230,26 +213,11 @@
 								<div class="widget-content-outer">
 									<div class="widget-content-wrapper">
 										<div class="widget-content-left">
-											<div class="widget-heading">Total Orders</div>
-											<div class="widget-subheading">Last year expenses</div>
+											<div class="widget-heading">No Of Loans</div>
+											<div class="widget-subheading">Loans Given This Month</div>
 										</div>
-										<div class="widget-content-right">
-											<div class="widget-numbers text-success">1896</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-xl-4">
-							<div class="card mb-3 widget-content">
-								<div class="widget-content-outer">
-									<div class="widget-content-wrapper">
-										<div class="widget-content-left">
-											<div class="widget-heading">Products Sold</div>
-											<div class="widget-subheading">Revenue streams</div>
-										</div>
-										<div class="widget-content-right">
-											<div class="widget-numbers text-warning">$3M</div>
+										<div class="widget-content-right" >
+											<div class="widget-numbers text-success" id="Month_Loans"></div>
 										</div>
 									</div>
 								</div>
@@ -260,54 +228,41 @@
 								<div class="widget-content-outer">
 									<div class="widget-content-wrapper">
 										<div class="widget-content-left">
-											<div class="widget-heading">Followers</div>
-											<div class="widget-subheading">People Interested</div>
+											<div class="widget-heading">Principle</div>
+											<div class="widget-subheading">Principle Given This Month</div>
 										</div>
 										<div class="widget-content-right">
-											<div class="widget-numbers text-danger">45,9%</div>
+											<div class="widget-numbers text-warning" id="Month_Principle" ></div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="d-xl-none d-lg-block col-md-6 col-xl-4">
+						<div class="col-md-6 col-xl-4">
 							<div class="card mb-3 widget-content">
 								<div class="widget-content-outer">
 									<div class="widget-content-wrapper">
 										<div class="widget-content-left">
-											<div class="widget-heading">Income</div>
-											<div class="widget-subheading">Expected totals</div>
+											<div class="widget-heading">Interest</div>
+											<div class="widget-subheading">This Month's Interest Amount</div>
 										</div>
 										<div class="widget-content-right">
-											<div class="widget-numbers text-focus">$147</div>
-										</div>
-									</div>
-									<div class="widget-progress-wrapper">
-										<div class="progress-bar-sm progress-bar-animated-alt progress">
-											<div class="progress-bar bg-info" role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;"></div>
-										</div>
-										<div class="progress-sub-label">
-											<div class="sub-label-left">Expenses</div>
-											<div class="sub-label-right">100%</div>
+											<div class="widget-numbers text-danger" id="Month_Interest"></div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="main-card mb-3 card">
 								<div class="card-header">Today's Pending Loans
-									<div class="btn-actions-pane-right">
-										<div role="group" class="btn-group-sm btn-group">
-											<button class="active btn btn-focus">Last Week</button>
-											<button class="btn btn-focus">All Month</button>
-										</div>
-									</div>
+
 								</div>
 								<div class="table-responsive">
-									<table class="align-middle mb-0 table table-borderless table-striped table-hover" onload="getData()">
+									<table class="align-middle mb-0 table table-borderless table-striped table-hover">
 										<thead>
 											<tr>
 												<th>Name</th>
@@ -332,8 +287,8 @@
 											<td id="row1_interest" class="text-center" ></td>
 											<td id="row1_status" class="text-center" ></td>
 											<td class="text-center">
-												<button type="button" id="PopoverCustomT-11" class="btn btn-primary btn-sm"><a href="Interest.html">Interest</a></button>
-												<button type="button" id="PopoverCustomT-12" class="btn btn-primary btn-sm"><a href="Whole.html">Both</a></button>
+												<button type="button" id="PopoverCustomT-11" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>
+												<button type="button" id="PopoverCustomT-12" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>
 											</td>
 										</tr>
 										<tr>
@@ -350,8 +305,8 @@
 											<td id="row2_interest" class="text-center" ></td>
 											<td id="row2_status" class="text-center" ></td>
 											<td class="text-center">
-												<button type="button" id="PopoverCustomT-21" class="btn btn-primary btn-sm"><a href="Interest.html">Interest</a></button>
-												<button type="button" id="PopoverCustomT-22" class="btn btn-primary btn-sm"><a href="Whole.html">Both</a></button>
+												<button type="button" id="PopoverCustomT-21" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>
+												<button type="button" id="PopoverCustomT-22" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>
 											</td>
 										</tr>
 										<tr>
@@ -368,8 +323,8 @@
 											<td id="row3_interest" class="text-center" ></td>
 											<td id="row3_status" class="text-center" ></td>
 											<td class="text-center">
-												<button type="button" id="PopoverCustomT-31" class="btn btn-primary btn-sm"><a href="Interest.html">Interest</a></button>
-												<button type="button" id="PopoverCustomT-32" class="btn btn-primary btn-sm"><a href="Whole.html">Both</a></button>
+												<button type="button" id="PopoverCustomT-31" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>
+												<button type="button" id="PopoverCustomT-32" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>
 											</td>
 										</tr>
 										<tr>
@@ -386,8 +341,8 @@
 											<td id="row4_interest" class="text-center" ></td>
 											<td id="row4_status" class="text-center" ></td>
 											<td class="text-center">
-												<button type="button" id="PopoverCustomT-41" class="btn btn-primary btn-sm"><a href="Interest.html">Interest</a></button>
-												<button type="button" id="PopoverCustomT-42" class="btn btn-primary btn-sm"><a href="Whole.html">Both</a></button>
+												<button type="button" id="PopoverCustomT-41" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>
+												<button type="button" id="PopoverCustomT-42" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>
 											</td>
 										</tr>
 										</tbody>
@@ -402,17 +357,17 @@
 								<div class="widget-content">
 									<div class="widget-content-outer">
 										<div class="widget-content-wrapper">
-											<div class="widget-content-left pr-2 fsize-1">
-												<div class="widget-numbers mt-0 fsize-3 text-danger">71%</div>
+											<div class="widget-content-left pr-2 fsize-1" id="Principle_Increment">
+
 											</div>
 											<div class="widget-content-right w-100">
 												<div class="progress-bar-xs progress">
-													<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100" style="width: 71%;"></div>
+													<div id="Principle_Increment_Properties" class="progress-bar bg-danger" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100" style=" width: 71%;"></div>
 												</div>
 											</div>
 										</div>
 										<div class="widget-content-left fsize-1">
-											<div class="text-muted opacity-6">Income Target</div>
+											<div class="text-muted opacity-6">Principle Increment</div>
 										</div>
 									</div>
 								</div>
@@ -423,17 +378,17 @@
 								<div class="widget-content">
 									<div class="widget-content-outer">
 										<div class="widget-content-wrapper">
-											<div class="widget-content-left pr-2 fsize-1">
-												<div class="widget-numbers mt-0 fsize-3 text-success">54%</div>
+											<div class="widget-content-left pr-2 fsize-1" id="Interest_Increment">
+
 											</div>
 											<div class="widget-content-right w-100">
 												<div class="progress-bar-xs progress">
-													<div class="progress-bar bg-success" role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;"></div>
+													<div id="Interest_Increment_Properties" class="progress-bar bg-success" role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;"></div>
 												</div>
 											</div>
 										</div>
 										<div class="widget-content-left fsize-1">
-											<div class="text-muted opacity-6">Expenses Target</div>
+											<div class="text-muted opacity-6">Interest Increment</div>
 										</div>
 									</div>
 								</div>
@@ -444,17 +399,17 @@
 								<div class="widget-content">
 									<div class="widget-content-outer">
 										<div class="widget-content-wrapper">
-											<div class="widget-content-left pr-2 fsize-1">
-												<div class="widget-numbers mt-0 fsize-3 text-warning">32%</div>
+											<div class="widget-content-left pr-2 fsize-1" id="Monthly_Growth">
+
 											</div>
 											<div class="widget-content-right w-100">
 												<div class="progress-bar-xs progress">
-													<div class="progress-bar bg-warning" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 32%;"></div>
+													<div id="Monthly_Growth_Properties" class="progress-bar bg-warning" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 32%;"></div>
 												</div>
 											</div>
 										</div>
 										<div class="widget-content-left fsize-1">
-											<div class="text-muted opacity-6">Spendings Target</div>
+											<div class="text-muted opacity-6">Monthly Growth</div>
 										</div>
 									</div>
 								</div>
@@ -465,17 +420,9 @@
 								<div class="widget-content">
 									<div class="widget-content-outer">
 										<div class="widget-content-wrapper">
-											<div class="widget-content-left pr-2 fsize-1">
-												<div class="widget-numbers mt-0 fsize-3 text-info">89%</div>
+											<div class="widget-content-left pr-2 fsize-1" id="Quarterly_Growth">
+												<div class="widget-numbers mt-0 fsize-3 text-info"></div>
 											</div>
-											<div class="widget-content-right w-100">
-												<div class="progress-bar-xs progress">
-													<div class="progress-bar bg-info" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%;"></div>
-												</div>
-											</div>
-										</div>
-										<div class="widget-content-left fsize-1">
-											<div class="text-muted opacity-6">Totals Target</div>
 										</div>
 									</div>
 								</div>
