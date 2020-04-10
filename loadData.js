@@ -42,7 +42,7 @@ function getData() {
 					stat =`${record.status}` ;
 					switch (stat) {
 						case '0' : {
-							element.innerHTML='<div  class="badge badge-success" >Principle Paid</div>';
+							element.innerHTML='<div  class="badge badge-success" >Paid</div>';
 							break;
 						}
 						case '1' : {
@@ -74,7 +74,7 @@ function getData() {
 					stat =`${record.status}` ;
 					switch (stat) {
 						case '0' : {
-							element.innerHTML='<div  class="badge badge-success" >Principle Paid</div>';
+							element.innerHTML='<div  class="badge badge-success" >Paid</div>';
 							break;
 						}
 						case '1' : {
@@ -106,7 +106,7 @@ function getData() {
 					stat =`${record.status}` ;
 					switch (stat) {
 						case '0' : {
-							element.innerHTML='<div  class="badge badge-success" >Principle Paid</div>';
+							element.innerHTML='<div  class="badge badge-success" >Paid</div>';
 							break;
 						}
 						case '1' : {

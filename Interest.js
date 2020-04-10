@@ -6,27 +6,27 @@ let con = mysql.createConnection({
 	password: "root",
 	database: "finance"
 });
-document.getElementById('btn-calc').addEventListener("click", Calculate)
-document.getElementById('btn-submit').addEventListener("click",Recover)
+document.getElementById('btn-calc-interest').addEventListener("click", Calculate)
+document.getElementById('btn-submit-interest').addEventListener("click",Recover)
 
 function Calculate(){
-	let Cname = document.forms["Main"]["name"].value
-	let Issue_Date = document.forms["Main"]["date"].value
+	let Cname = document.forms["Interest-form"]["name"].value
+	let Issue_Date = document.forms["Interest-form"]["date"].value
 	let interest;
 	con.query(`SELECT interest from loan where name = '${Cname}' and idate = '${Issue_Date}'`,function (err,rows) {
 		interest = rows[0].interest;
-		document.forms["Main"]["amount"].value = interest;
+		document.forms["Interest-form"]["interest"].value = interest;
 	})
-	document.forms["Main"]["name"].value = Cname
-	document.forms["Main"]["date"].value = Issue_Date
+	document.forms["Interest-form"]["name"].value = Cname
+	document.forms["Interest-form"]["date"].value = Issue_Date
 	event.preventDefault();
 }
 
 function Recover() {
-	let Cname = document.forms["Main"]["name"].value
-	let Issue_Date = document.forms["Main"]["date"].value
-	let amount = document.forms["Main"]["amount"].value;
-	let sql = `insert into recoveries values('${Cname}',${amount},CURRENT_DATE,'Interest,'No')`
+	let Cname = document.forms["Interest-form"]["name"].value
+	let Issue_Date = document.forms["Interest-form"]["date"].value
+	let amount = document.forms["Interest-form"]["interest"].value;
+	let sql = `insert into recoveries values('${Cname}',${amount},CURRENT_DATE,'Interest','No')`
 	con.query(sql,function (err) {
 		if (err)
 			throw err;
