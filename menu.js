@@ -9,7 +9,7 @@ const {
 	openNewGitHubIssue,
 	debugInfo
 } = require('electron-util');
-const config = require('./config');
+
 
 const showPreferences = () => {
 	// Show the app's preferences here
@@ -27,13 +27,7 @@ const helpSubmenu = [
 	{
 		label: 'Report an Issue…',
 		click() {
-			const body = `
-<!-- Please succinctly describe your issue and steps to reproduce it. -->
-
-
----
-
-${debugInfo()}`;
+			const body = `<!-- Please succinctly describe your issue and steps to reproduce it. -->${debugInfo()}`;
 
 			openNewGitHubIssue({
 				user: 'sindresorhus',
@@ -60,7 +54,7 @@ const debugSubmenu = [
 	{
 		label: 'Show Settings',
 		click() {
-			config.openInEditor();
+
 		}
 	},
 	{
@@ -75,7 +69,7 @@ const debugSubmenu = [
 	{
 		label: 'Delete Settings',
 		click() {
-			config.clear();
+
 			app.relaunch();
 			app.quit();
 		}
