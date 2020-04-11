@@ -1,5 +1,5 @@
 const mysql = require('mysql')
-
+alert("NOTE : This page Adds Monthly Interest Loans!!")
 const con = mysql.createConnection({
 	host: 'localhost',
 	user: 'con',
@@ -8,7 +8,7 @@ const con = mysql.createConnection({
 });
 
 document.getElementById('btn-submit-Weekly').addEventListener('click',Weekly_Insert)
-
+//TODO : Implement Weekly Interest Feature
 function Weekly_Insert() {
 	let name = document.forms['Weekly-form']['name'].value
 	let address = document.forms['Weekly-form']['address'].value

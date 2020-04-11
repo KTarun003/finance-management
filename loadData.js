@@ -15,152 +15,55 @@ let con = mysql.createConnection({
 let i = 0;
 let element;
 let stat = ``;
-let record;
+let res;
 con.connect(function (err) {
 	if (err)
 		throw err;
 });
+let html = ``;
 let Pperc;
 let Iperc = 0.0;
 let Gperc = 0.0;
 let TextClass='success';
+element=document.getElementById('dash-table')
 function getData() {
-	//TODO : Add Date functionality to the query
-	con.query(`SELECT name,principle,interest,status FROM loan `, function (err, result) {
+
+	con.query(`SELECT name,principle,interest,status FROM loan where status=3 and rdate=CURRENT_DATE()`, function (err, result) {
 		if (err)
 			throw err;
-		for (record of result) {
-			switch (i) {
-				case 0 : {
-					element = document.getElementById('row1_name')
-					element.innerHTML=`${record.name}`;
-					element = document.getElementById('row1_principle')
-					element.innerHTML=`${record.principle}`;
-					element = document.getElementById('row1_interest')
-					element.innerHTML=`${record.interest}`;
-					element = document.getElementById('row1_status')
-					stat =`${record.status}` ;
-					switch (stat) {
-						case '0' : {
-							element.innerHTML='<div  class="badge badge-success" >Paid</div>';
-							break;
-						}
-						case '1' : {
-							element.innerHTML='<div  class="badge badge-info" >Principle Paid</div>';
-							break;
-						}
-						case '2' : {
-							element.innerHTML='<div  class="badge badge-warning" >Interest Paid</div>';
-							break;
-						}
-						case '3' : {
-							element.innerHTML='<div  class="badge badge-danger" >Not Paid</div>';
-							break;
-						}
-						default :{ element.innerHTML='<div  class="badge badge-danger" >Error</div>';
-							break;
-						}
+		else {
+			for (res of result) {
+				html = html + `<tr><td class="text-center" >${res.name}</td><td class="text-center" >${res.principle}</td><td class="text-center" >${res.interest}</td>`
+				stat = `${res.status}`;
+				switch (stat) {
+					case '0' : {
+						html = html + '<td><div align="center" class="badge badge-success" >Paid</div></td>';
+						break;
 					}
-					break;
-				}
-				case 1 : {
-					element = document.getElementById('row2_name')
-					element.innerHTML=`${record.name}`;
-					element = document.getElementById('row2_principle')
-					element.innerHTML=`${record.principle}`;
-					element = document.getElementById('row2_interest')
-					element.innerHTML=`${record.interest}`;
-					element = document.getElementById('row2_status')
-					stat =`${record.status}` ;
-					switch (stat) {
-						case '0' : {
-							element.innerHTML='<div  class="badge badge-success" >Paid</div>';
-							break;
-						}
-						case '1' : {
-							element.innerHTML='<div  class="badge badge-info" >Principle Paid</div>';
-							break;
-						}
-						case '2' : {
-							element.innerHTML='<div  class="badge badge-warning" >Interest Paid</div>';
-							break;
-						}
-						case '3' : {
-							element.innerHTML='<div  class="badge badge-danger" >Not Paid</div>';
-							break;
-						}
-						default :{ element.innerHTML='<div  class="badge badge-danger" >Error</div>';
-							break;
-						}
+					case '1' : {
+						html = html + '<td><div align="center" class="badge badge-info" >Principle Paid</div></td>';
+						break;
 					}
-					break;
-				}
-				case 2 : {
-					element = document.getElementById('row3_name')
-					element.innerHTML=`${record.name}`;
-					element = document.getElementById('row3_principle')
-					element.innerHTML=`${record.principle}`;
-					element = document.getElementById('row3_interest')
-					element.innerHTML=`${record.interest}`;
-					element = document.getElementById('row3_status')
-					stat =`${record.status}` ;
-					switch (stat) {
-						case '0' : {
-							element.innerHTML='<div  class="badge badge-success" >Paid</div>';
-							break;
-						}
-						case '1' : {
-							element.innerHTML='<div  class="badge badge-info" >Principle Paid</div>';
-							break;
-						}
-						case '2' : {
-							element.innerHTML='<div  class="badge badge-warning" >Interest Paid</div>';
-							break;
-						}
-						case '3' : {
-							element.innerHTML='<div  class="badge badge-danger" >Not Paid</div>';
-							break;
-						}
-						default :{ element.innerHTML='<div  class="badge badge-danger" >Error</div>';
-							break;
-						}
+					case '2' : {
+						html = html + '<td><div align="center" class="badge badge-warning" >Interest Paid</div></td>';
+						break;
 					}
-					break;
-				}
-				case 3 : {
-					element = document.getElementById('row4_name')
-					element.innerHTML=`${record.name}`;
-					element = document.getElementById('row4_principle')
-					element.innerHTML=`${record.principle}`;
-					element = document.getElementById('row4_interest')
-					element.innerHTML=`${record.interest}`;
-					element = document.getElementById('row4_status')
-					stat =`${record.status}` ;
-					switch (stat) {
-						case '0' : {
-							element.innerHTML='<div  class="badge badge-success" >Paid</div>';
-							break;
-						}
-						case '1' : {
-							element.innerHTML='<div  class="badge badge-info" >Principle Paid</div>';
-							break;
-						}
-						case '2' : {
-							element.innerHTML='<div  class="badge badge-warning" >Interest Paid</div>';
-							break;
-						}
-						case '3' : {
-							element.innerHTML='<div  class="badge badge-danger" >Not Paid</div>';
-							break;
-						}
-						default :{ element.innerHTML='<div  class="badge badge-danger" >Error</div>';
-							break;
-						}
+					case '3' : {
+						html = html + '<td><div align="center" class="badge badge-danger" >Not Paid</div></td>';
+						break;
 					}
-					break;
+					default : {
+						html = html + '<td><div align="center" class="badge badge-danger" >Error</div></td>';
+						break;
+					}
 				}
+				html = html +'<td class="text-center">\n' +
+					'\t\t\t\t\t\t\t\t\t\t\t\t<button type="button" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>\n' +
+					'\t\t\t\t\t\t\t\t\t\t\t\t<button type="button" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>\n' +
+					'\t\t\t\t\t\t\t\t\t\t\t</td>\n' +
+					'\t\t\t\t\t\t\t\t\t\t</tr>'
 			}
-			i++;
+			element.innerHTML = html;
 		}
 
 	});
@@ -200,6 +103,7 @@ function getData() {
 		element = document.getElementById('Month_Interest')
 		element.innerHTML=`<span>${result[0].sum}</span>`
 	})
+	//TODO : Implement a proper way for analytics
 	con.query('SELECT p_percent from analytics where month = MONTH(CURRENT_DATE) AND year = YEAR(CURRENT_DATE) ',function (err, result) {
 		if (err)
 			throw err;
