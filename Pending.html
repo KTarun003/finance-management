@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Recover Interest</title>
+	<title>Pending Loans</title>
 	<link href="./main.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="assets/images/file-icon.png">
+
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -142,9 +143,36 @@
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
 							<div class="page-title-icon">
-								<i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
+								<i class="pe-7s-browser icon-gradient bg-mean-fruit"></i>
 							</div>
-							<div>Recover Interest</div>
+							<div>Pending Loans</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="main-card mb-3 card">
+						<div class="card-header">Today's Pending Loans
+
+						</div>
+						<div class="table-responsive">
+							<table class="align-middle mb-0 table table-borderless table-striped table-hover">
+								<thead>
+								<tr>
+									<th class="text-center">Name</th>
+									<th class="text-center">Address</th>
+									<th class="text-center">Phone</th>
+									<th class="text-center">Principle</th>
+									<th class="text-center">Interest</th>
+									<th class="text-center">Issue Date</th>
+									<th class="text-center">Return Date</th>
+									<th class="text-center">Status</th>
+
+								</tr>
+								</thead>
+								<tbody id="pending-loans">
+
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
@@ -153,4 +181,5 @@
 	</div>
 </div>
 </body>
+<script src="Pending.js"></script>
 </html>
