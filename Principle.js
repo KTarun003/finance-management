@@ -26,7 +26,7 @@ function Recover() {
 	let Cname = document.forms["Principle-form"]["name"].value
 	let Issue_Date = document.forms["Principle-form"]["date"].value
 	let amount = document.forms["Principle-form"]["principle"].value;
-	let sql = `insert into recoveries values('${Cname}',${amount},CURRENT_DATE,'Principle','No')`
+	let sql = `insert into recoveries values('${Cname}',${amount},CURRENT_DATE,0,'No')`
 	con.query(sql,function (err) {
 		if (err)
 			throw err;

@@ -8,13 +8,15 @@ let con = mysql.createConnection({
 });
 document.getElementById('btn-calc-whole').addEventListener("click", Calculate)
 document.getElementById('btn-submit-whole').addEventListener("click",Recover)
-
+let principle,interest
 function Calculate(){
 	let Cname = document.forms["Whole-form"]["name"].value
 	let Issue_Date = document.forms["Whole-form"]["date"].value
 	let amount;
-	con.query(`SELECT (principle+interest) as amount from loan where name = '${Cname}' and idate = '${Issue_Date}'`,function (err,rows) {
-		amount = rows[0].amount;
+	con.query(`SELECT principle,interest from loan where name = '${Cname}' and idate = '${Issue_Date}'`,function (err,rows) {
+		principle = rows[0].principle
+		interest = rows[0].interest
+		amount = principle + interest
 		document.forms["Whole-form"]["amount"].value = amount;
 	})
 	document.forms["Whole-form"]["name"].value = Cname
@@ -25,8 +27,7 @@ function Calculate(){
 function Recover() {
 	let Cname = document.forms["Whole-form"]["name"].value
 	let Issue_Date = document.forms["Whole-form"]["date"].value
-	let amount = document.forms["Whole-form"]["amount"].value;
-	let sql = `insert into recoveries values('${Cname}',${amount},CURRENT_DATE,'Whole','No')`
+	let sql = `insert into recoveries values('${Cname}',${principle},CURRENT_DATE,${interest},'No')`
 	con.query(sql,function (err) {
 		if (err)
 			throw err;
