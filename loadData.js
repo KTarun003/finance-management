@@ -7,27 +7,20 @@ let con = mysql.createConnection({
 });
 
 
-
-
-
-
-
-let i = 0;
 let element;
 let stat = ``;
 let res;
-con.connect(function (err) {
-	if (err)
-		throw err;
-});
 let html = ``;
-let Pperc;
+let Pperc = 0.0;
 let Iperc = 0.0;
 let Gperc = 0.0;
 let TextClass='success';
+
 element=document.getElementById('dash-table')
 function getData() {
-
+	// Analyse Procedure Call
+	con.query('Call analyse()')
+	// Table Data
 	con.query(`SELECT name,principle,interest,status FROM loan where status=3 and rdate=CURRENT_DATE()`, function (err, result) {
 		if (err)
 			throw err;
@@ -37,23 +30,23 @@ function getData() {
 				stat = `${res.status}`;
 				switch (stat) {
 					case '0' : {
-						html = html + '<td><div align="center" class="badge badge-success" >Paid</div></td>';
+						html = html + '<td><div  class="badge badge-success" >Paid</div></td>';
 						break;
 					}
 					case '1' : {
-						html = html + '<td><div align="center" class="badge badge-info" >Principle Paid</div></td>';
+						html = html + '<td><div  class="badge badge-info" >Principle Paid</div></td>';
 						break;
 					}
 					case '2' : {
-						html = html + '<td><div align="center" class="badge badge-warning" >Interest Paid</div></td>';
+						html = html + '<td><div  class="badge badge-warning" >Interest Paid</div></td>';
 						break;
 					}
 					case '3' : {
-						html = html + '<td><div align="center" class="badge badge-danger" >Not Paid</div></td>';
+						html = html + '<td><div  class="badge badge-danger" >Not Paid</div></td>';
 						break;
 					}
 					default : {
-						html = html + '<td><div align="center" class="badge badge-danger" >Error</div></td>';
+						html = html + '<td><div  class="badge badge-danger" >Error</div></td>';
 						break;
 					}
 				}
@@ -67,47 +60,54 @@ function getData() {
 		}
 
 	});
+	// Total Number of Loans
 	con.query('SELECT COUNT(*) as num from loan',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('NO_Loans')
 		element.innerHTML=`<span>${result[0].num}</span>`
 	})
-	con.query('SELECT SUM(principle) as sum from loan',function (err, result){
+	// Total Principle
+	con.query('SELECT SUM(principle) as sum from recoveries',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('Principle')
 		element.innerHTML=`<span>${result[0].sum}</span>`
 	})
-	con.query('SELECT SUM(interest) as sum from loan',function (err, result){
+	// Total Interest
+	con.query('SELECT SUM(interest) as sum from recoveries',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('Interest')
 		element.innerHTML=`<span>${result[0].sum}</span>`
 	})
+	// Monthly Number of Loans
 	con.query('SELECT COUNT(*) as num from loan where MONTH(idate) = MONTH(CURRENT_DATE)',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('Month_Loans')
 		element.innerHTML=`<span>${result[0].num}</span>`
 	})
-	con.query('SELECT SUM(principle) as sum from loan where MONTH(idate) = MONTH(CURRENT_DATE)',function (err, result){
+	// Monthly Principle
+	con.query('SELECT SUM(principle) as sum from recoveries where MONTH(date) = MONTH(CURRENT_DATE) ',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('Month_Principle')
 		element.innerHTML=`<span>${result[0].sum}</span>`
 	})
-	con.query('SELECT SUM(interest) as sum from loan where MONTH(rdate) = MONTH(CURRENT_DATE)',function (err, result){
+	// Monthly Interest
+	con.query('SELECT SUM(interest) as sum from recoveries where MONTH(date) = MONTH(CURRENT_DATE) ',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('Month_Interest')
 		element.innerHTML=`<span>${result[0].sum}</span>`
 	})
-	//TODO : Implement a proper way for analytics
-	con.query('SELECT p_percent from analytics where month = MONTH(CURRENT_DATE) AND year = YEAR(CURRENT_DATE) ',function (err, result) {
+	// Interest and Principle Percent
+	con.query('select p_percent,i_percent from analytics where month = month(CURRENT_DATE()) AND year = YEAR(CURRENT_DATE())',function (err,res) {
 		if (err)
 			throw err;
-		Pperc = result[0].p_percent;
+		Iperc = res[0].i_percent
+		Pperc = res[0].p_percent
 		if(Pperc < 0)
 			TextClass='danger'
 		element = document.getElementById('Principle_Increment')
@@ -116,12 +116,6 @@ function getData() {
 		element.setAttribute('aria-valuenow',`${Pperc}`)
 		element.setAttribute('class',`bg-${TextClass}`)
 		element.setAttribute('style',`width :${Pperc}%;`)
-
-	})
-	con.query('SELECT i_percent from analytics where month = MONTH(CURRENT_DATE) AND year = YEAR(CURRENT_DATE) ',function (err, result) {
-		if (err)
-			throw err;
-		Iperc = result[0].i_percent;
 		if(Iperc < 0)
 			TextClass='danger'
 		element = document.getElementById('Interest_Increment')
@@ -131,6 +125,7 @@ function getData() {
 		element.setAttribute('class',`bg-${TextClass}`)
 		element.setAttribute('style',`width :${Iperc}%;`)
 	})
+	// Monthly Growth
 	con.query('SELECT i_percent from analytics where month = (MONTH(CURRENT_DATE)-1) AND year = YEAR(CURRENT_DATE) ',function (err, result) {
 		if (err)
 			throw err;
@@ -147,5 +142,6 @@ function getData() {
 	})
 
 }
+
 
 getData()

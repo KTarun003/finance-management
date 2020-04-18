@@ -11,11 +11,9 @@
 	<meta name="description" content="This is an app to manage your finance business.">
 	<meta name="msapplication-tap-highlight" content="no">
 	<link href="./main.css" rel="stylesheet">
-	<link rel="icon" type="image/png" href="assets/images/file-icon.png">
+	<link rel="icon" type="image/png" href="build/file-icon.png">
 
-	<style>
-		.btn-link { color: #ffffff; } /* CSS link color */
-	</style>
+
 </head>
 
 <body>
@@ -25,12 +23,21 @@
 				<div class="logo-src"></div>
 				<div class="header__pane ml-auto">
 					<div>
-						<button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+						<button id="menu-btn1" type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
 							<span class="hamburger-box">
 								<span class="hamburger-inner"></span>
 							</span>
 						</button>
 					</div>
+				</div>
+			</div>
+			<div class="app-header__mobile-menu">
+				<div>
+					<button id="menu-btn2" type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
 				</div>
 			</div>
 			<div class="app-header__mobile-menu">
@@ -271,80 +278,7 @@
 												<th class="text-center">Recover</th>
 											</tr>
 										</thead>
-										<tbody id="dash-table" >
-										<tr>
-											<td>
-												<div class="widget-content p-0">
-													<div class="widget-content-wrapper">
-														<div class="widget-content-left flex2">
-															<div id="row1_name" class="widget-heading" ></div>
-														</div>
-													</div>
-												</div>
-											</td>
-											<td id="row1_principle" class="text-center" ></td>
-											<td id="row1_interest" class="text-center" ></td>
-											<td id="row1_status" class="text-center" ></td>
-											<td class="text-center">
-												<button type="button" id="PopoverCustomT-11" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>
-												<button type="button" id="PopoverCustomT-12" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="widget-content p-0">
-													<div class="widget-content-wrapper">
-														<div class="widget-content-left flex2">
-															<div id="row2_name" class="widget-heading" ></div>
-														</div>
-													</div>
-												</div>
-											</td>
-											<td id="row2_principle" class="text-center" ></td>
-											<td id="row2_interest" class="text-center" ></td>
-											<td id="row2_status" class="text-center" ></td>
-											<td class="text-center">
-												<button type="button" id="PopoverCustomT-21" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>
-												<button type="button" id="PopoverCustomT-22" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="widget-content p-0">
-													<div class="widget-content-wrapper">
-														<div class="widget-content-left flex2">
-															<div id="row3_name" class="widget-heading" ></div>
-														</div>
-													</div>
-												</div>
-											</td>
-											<td id="row3_principle" class="text-center" ></td>
-											<td id="row3_interest" class="text-center" ></td>
-											<td id="row3_status" class="text-center" ></td>
-											<td class="text-center">
-												<button type="button" id="PopoverCustomT-31" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>
-												<button type="button" id="PopoverCustomT-32" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="widget-content p-0">
-													<div class="widget-content-wrapper">
-														<div class="widget-content-left flex2">
-															<div id="row4_name" class="widget-heading" ></div>
-														</div>
-													</div>
-												</div>
-											</td>
-											<td id="row4_principle" class="text-center"></td>
-											<td id="row4_interest" class="text-center" ></td>
-											<td id="row4_status" class="text-center" ></td>
-											<td class="text-center">
-												<button type="button" id="PopoverCustomT-41" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>
-												<button type="button" id="PopoverCustomT-42" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>
-											</td>
-										</tr>
-										</tbody>
+										<tbody id="dash-table" ></tbody>
 									</table>
 								</div>
 							</div>
