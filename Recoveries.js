@@ -8,7 +8,7 @@ const con = mysql.createConnection({
 });
 function recoveriestable() {
 	let element = document.getElementById('recoveries')
-	let sql = "select name,date,amount,type,weekly from recoveries"
+	let sql = "select name,date,principle,interest,weekly from recoveries"
 	let res;
 	let html=``;
 	con.query(sql, function (err, result) {
@@ -28,7 +28,7 @@ function recoveriestable() {
 					mm1='0'+mm1
 				}
 				date = dd1 + '/' + mm1 + '/' + yyyy1;
-				html = html + `<tr><td class="text-center" >${res.name}</td><td class="text-center" >${date}</td><td class="text-center" >${res.amount}</td><td class="text-center" >${res.type}</td><td class="text-center" >${res.weekly}</td></tr>`
+				html = html + `<tr><td class="text-center" >${res.name}</td><td class="text-center" >${date}</td><td class="text-center" >${res.principle}</td><td class="text-center" >${res.interest}</td><td class="text-center" >${res.weekly}</td></tr>`
 			}
 			element.innerHTML = html;
 		}
