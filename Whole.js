@@ -13,10 +13,15 @@ function Calculate(){
 	let Cname = document.forms["Whole-form"]["name"].value
 	let Issue_Date = document.forms["Whole-form"]["date"].value
 	let amount;
-	con.query(`SELECT principle,interest from loan where name = '${Cname}' and idate = '${Issue_Date}'`,function (err,rows) {
+	con.query(`SELECT principle,interest,times,amount from loan where name = '${Cname}' and idate = '${Issue_Date}'`,function (err,rows) {
 		principle = rows[0].principle
 		interest = rows[0].interest
-		amount = principle + interest
+		amount = rows[0].amount
+		let times = parseInt(rows[0].times)
+		if (times >0){
+			principle = principle/times
+			interest = interest/times
+		}
 		document.forms["Whole-form"]["amount"].value = amount;
 	})
 	document.forms["Whole-form"]["name"].value = Cname
@@ -27,7 +32,7 @@ function Calculate(){
 function Recover() {
 	let Cname = document.forms["Whole-form"]["name"].value
 	let Issue_Date = document.forms["Whole-form"]["date"].value
-	let sql = `insert into recoveries values('${Cname}',${principle},CURRENT_DATE,${interest},'No')`
+	let sql = `insert into recoveries values('${Cname}',${principle},CURRENT_DATE,${interest})`
 	con.query(sql,function (err) {
 		if (err)
 			throw err;
