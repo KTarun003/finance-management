@@ -4,7 +4,7 @@
 	"version": "0.1.2",
 	"description": "App used for managing a finance business",
 	"license": "MIT",
-	"repository": "KTarun003/finance-management",
+	"repository": "git://github.com/KTarun003/finance-management.git",
 	"author": {
 		"name": "K Tarun Reddy",
 		"email": "tarunreddykreddy@gmail.com"
@@ -18,7 +18,7 @@
 		"dist": "electron-builder --macos --linux --windows",
 		"release": "np",
 	    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=build/icon.png --prune=true --out=release-builds",
-	    "package-win": "electron-packager . finance-management --overwrite --asar=true --platform=win32 --arch=ia32 --icon=abuild/icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Finance Management\"",
+	    "package-win": "electron-packager . finance-management --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Finance Management\"",
 	  	"package-linux": "electron-packager . finance-management --overwrite --asar=true --platform=linux --arch=x64 --icon=build/icon.png --prune=true --out=release-builds"
 	},
 	"dependencies": {
@@ -47,6 +47,9 @@
 		"publish": false,
 		"releaseDraft": false
 	},
+    "publishConfig": {
+		"registry":"https://npm.pkg.github.com/"
+    },
 	"build": {
 		"appId": "com.EssSolutions.FinanceManagement",
 		"mac": {
