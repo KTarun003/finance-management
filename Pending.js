@@ -8,7 +8,7 @@ const con = mysql.createConnection({
 });
 function table() {
 	let element = document.getElementById('pending-loans')
-	let sql = "select name,address,phone,principle,interest,idate,rdate,status from loan where not status = 0"
+	let sql = 'select name,address,phone,principle,interest,idate,rdate,status from loan where (status = 3) and (rdate < CURRENT_DATE)';
 	let i=0;
 	let res;
 	let html=``;

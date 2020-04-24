@@ -17,8 +17,9 @@ function Monthly_Insert() {
 	let principle = parseFloat(document.forms['Monthly-form']['principle'].value)
 	let rate = parseFloat(document.forms['Monthly-form']['rate'].value)
 	let returnDate = document.forms['Monthly-form']['Return_Date'].value
-	let interest = (principle*rate)/100;
-	let sql = `insert into loan(name,phone,address,asset,principle,rate,interest,idate,rdate) values('${name}','${phone}','${address}','${asset}',${principle},${rate},${interest},CURRENT_DATE(),'${returnDate}')`
+	let interest = (principle*rate)/100
+	let amount = principle+interest
+	let sql = `insert into loan(name,phone,address,asset,principle,rate,interest,amount,idate,rdate) values('${name}','${phone}','${address}','${asset}',${principle},${rate},${interest},${amount},CURRENT_DATE,'${returnDate}')`
 	con.query(sql,function (err) {
 		if (err)
 			throw err;

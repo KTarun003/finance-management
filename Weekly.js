@@ -19,13 +19,15 @@ function Weekly_Insert() {
 	let interest = (principle*rate)/100;
 	let amount = principle + interest
 	let weekly_amount = amount/times
+	let weekly_principle = principle/times
+	let weekly_interest = interest/times
 	let issueDate = ``
 	let returnDate = ``
 
 	for (let i = 0; i < times; i++) {
 		issueDate = `DATE_ADD(CURRENT_DATE(),INTERVAL ${period*i} DAY)`
 		returnDate = `DATE_ADD(CURRENT_DATE(),INTERVAL ${period*(i+1)} DAY)`
-		let sql = `insert into loan(name,phone,address,asset,principle,rate,interest,amount,idate,rdate) values('${name}','${phone}','${address}','${asset}',${principle},${rate},${interest},${weekly_amount},${issueDate},${returnDate})`
+		let sql = `insert into loan(name,phone,address,asset,principle,rate,interest,amount,idate,rdate) values('${name}','${phone}','${address}','${asset}',${weekly_principle},${rate},${weekly_interest},${weekly_amount},${issueDate},${returnDate})`
 		console.log(sql)
 		con.query(sql,function (err) {
 			if (err)
