@@ -6,10 +6,10 @@ const con = mysql.createConnection({
 	password: 'root',
 	database: 'finance'
 });
+
 function table() {
-	let element = document.getElementById('pending-loans')
-	let sql = 'select name,address,phone,principle,interest,idate,rdate,status from loan where (status = 3) and (rdate < CURRENT_DATE)';
-	let i=0;
+	let element = document.getElementById('loans')
+	let sql = 'select name,address,phone,principle,interest,idate,rdate,status from loan where status = 3';
 	let res;
 	let html=``;
 	con.query(sql, function (err, result) {
@@ -65,7 +65,6 @@ function table() {
 						break;
 					}
 				}
-				i++
 			}
 			element.innerHTML = html;
 		}
@@ -81,7 +80,7 @@ function Search(){
 	let input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("Search-Input");
 	filter = input.value.toUpperCase();
-	table = document.getElementById("pending-loans");
+	table = document.getElementById("loans");
 	tr = table.getElementsByTagName("tr");
 
 	// Loop through all table rows, and hide those who don't match the search query
@@ -98,5 +97,4 @@ function Search(){
 		}
 	}
 }
-
 table()
