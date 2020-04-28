@@ -1,5 +1,4 @@
 'use strict';
-import * as autoUpdater from "electron-updater";
 
 const path = require('path');
 const {app, BrowserWindow, Menu} = require('electron');
