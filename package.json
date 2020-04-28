@@ -44,7 +44,7 @@
 		]
 	},
 	"np": {
-		"publish": false,
+		"publish": true,
 		"releaseDraft": false
 	},
     "publishConfig": {
