@@ -29,7 +29,7 @@ function table() {
 				if(mm1<10){
 					mm1='0'+mm1
 				}
-				idate = dd1 + '/' + mm1 + '/' + yyyy1;
+				idate = yyyy1 + '-' + mm1 + '-' + dd1 ;
 				let rdate = new Date( `${res.rdate}`);
 				let dd2 = rdate.getDate();
 				let mm2 = rdate.getMonth() + 1;
@@ -41,8 +41,14 @@ function table() {
 				if(mm2<10){
 					mm2='0'+mm2
 				}
-				rdate = dd2 + '/' + mm2 + '/' + yyyy2;
-				html = html + `<tr><td class="text-center" ><input class="editable-cell" type="text" class="editable-cell" value="${res.name}"></td><td class="text-center" ><input class="editable-cell" type="text" value="${res.address}"></td><td class="text-center" ><input class="editable-cell" type="text" value="${res.phone}"></td><td class="text-center" ><input class="editable-cell" type="text" value="${res.principle}"></td><td class="text-center" ><input class="editable-cell" type="text" value="${res.interest}"></td><td class="text-center" ><input class="editable-cell" type="text" value="${idate}"></td><td class="text-center" ><input class="editable-cell" type="text" value="${rdate}"></td>`
+				rdate = yyyy2 + '-' + mm2 + '-' + dd2 ;
+				html = html + `<tr><td class="text-center" ><input class="editable-cell" type="text" class="editable-cell" value="${res.name}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="text" value="${res.address}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="text" value="${res.phone}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="text" value="${res.principle}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="text" value="${res.interest}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="date" value="${idate}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="date" value="${rdate}"></td>`;
 				let stat = `${res.status}`;
 				switch (stat) {
 					case '0' : {
@@ -77,7 +83,6 @@ function table() {
 }
 
 document.getElementById('Search-Input').addEventListener("keyup", Search)
-
 function Search(){
 	let input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("Search-Input");
@@ -87,10 +92,9 @@ function Search(){
 
 	// Loop through all table rows, and hide those who don't match the search query
 	for (i = 0; i < tr.length; i++) {
-		td = tr[i].getElementsByTagName("td")[0];
-		console.log(td)
+		td = tr[i].getElementsByTagName("input")[0];
 		if (td) {
-			txtValue = td.textContent || td.innerText;
+			txtValue = td.value.toUpperCase() ;
 			if (txtValue.toUpperCase().indexOf(filter) > -1) {
 				tr[i].style.display = "";
 			}
@@ -102,6 +106,33 @@ function Search(){
 }
 
 function Update(){
-	//TODO : Implement Update Feature
+	let table,tr;
+	table = document.getElementById("Edit");
+	tr = table.getElementsByTagName("tr");
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("input");
+		if (td) {
+			let name,address,phone,principle,interest,issue_date,return_date,amount;
+			name = td[0].value;
+			address = td[1].value;
+			phone = td[2].value;
+			principle = td[3].value;
+			interest = td[4].value;
+			amount = principle + interest;
+			issue_date = td[5].value;
+			return_date = td[6].value;
+			sql = `update  loan set address ='${address}',
+									phone = '${phone}',
+									principle = ${principle},
+									interest = ${interest},
+									amount = ${amount},
+									rdate = '${return_date}'
+					where name = '${name}' and idate = '${issue_date}'`
+			con.query(sql,function (err) {
+				if (err)
+					throw err;
+			})
+		}
+	}
 }
 table()
