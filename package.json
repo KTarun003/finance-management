@@ -17,9 +17,9 @@
 		"pack": "electron-builder --dir",
 		"dist": "electron-builder --macos --linux --windows",
 		"release": "np",
-	    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=build/icon.png --prune=true --out=release-builds",
-	    "package-win": "electron-packager . finance-management --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Finance Management\"",
-	  	"package-linux": "electron-packager . finance-management --overwrite --asar=true --platform=linux --arch=x64 --icon=build/icon.png --prune=true --out=release-builds"
+		"package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=build/icon.png --prune=true --out=release-builds",
+		"package-win": "electron-packager . finance-management --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Finance Management\"",
+		"package-linux": "electron-packager . finance-management --overwrite --asar=true --platform=linux --arch=x64 --icon=build/icon.png --prune=true --out=release-builds"
 	},
 	"dependencies": {
 		"electron-context-menu": "^0.15.0",
@@ -29,7 +29,8 @@
 		"electron-updater": "^4.0.6",
 		"electron-util": "^0.13.0",
 		"express": "^4.17.1",
-		"mysql": "^2.18.1"
+		"mysql": "^2.18.1",
+		"uuid": "^7.0.3"
 	},
 	"devDependencies": {
 		"electron": "^7.1.1",
@@ -47,9 +48,9 @@
 		"publish": true,
 		"releaseDraft": false
 	},
-    "publishConfig": {
-		"registry":"https://npm.pkg.github.com/"
-    },
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	},
 	"build": {
 		"appId": "com.EssSolutions.FinanceManagement",
 		"mac": {

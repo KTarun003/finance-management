@@ -1,5 +1,5 @@
 const mysql = require('mysql')
-
+const uuid = require('uuid')
 const con = mysql.createConnection({
 	host: 'localhost',
 	user: 'con',
@@ -19,7 +19,8 @@ function Monthly_Insert() {
 	let returnDate = document.forms['Monthly-form']['Return_Date'].value
 	let interest = (principle*rate)/100
 	let amount = principle+interest
-	let sql = `insert into loan(name,phone,address,asset,principle,rate,interest,amount,idate,rdate) values('${name}','${phone}','${address}','${asset}',${principle},${rate},${interest},${amount},CURRENT_DATE,'${returnDate}')`
+	let uid = uuid.v1();
+	let sql = `insert into loan(id,name,phone,address,asset,principle,rate,interest,amount,idate,rdate) values('${uid}','${name}','${phone}','${address}','${asset}',${principle},${rate},${interest},${amount},CURRENT_DATE,'${returnDate}')`
 	con.query(sql,function (err) {
 		if (err)
 			throw err;

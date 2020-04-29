@@ -19,7 +19,7 @@ app.setAppUserModelId('com.EssSolutions.FinanceManagement');
 
 // Uncomment this before publishing your first version.
 // It's commented out as it throws an error if there are no published versions.
- if (!is.development) {
+/* if (!is.development) {
  	const FOUR_HOURS = 1000 * 60 * 60 * 4;
  	setInterval(() => {
 		autoUpdater.checkForUpdates();
@@ -27,7 +27,7 @@ app.setAppUserModelId('com.EssSolutions.FinanceManagement');
 
  	autoUpdater.checkForUpdates();
  }
-
+*/
 // Prevent window from being garbage collected
 let mainWindow;
 

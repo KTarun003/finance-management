@@ -9,7 +9,7 @@ const con = mysql.createConnection({
 
 function table() {
 	let element = document.getElementById('Edit')
-	let sql = 'select name,address,phone,principle,interest,idate,rdate,status from loan where status = 3';
+	let sql = 'select name,address,phone,principle,interest,idate,rdate,status,id from loan where status = 3';
 	let i=0;
 	let res;
 	let html=``;
@@ -72,7 +72,7 @@ function table() {
 						break;
 					}
 				}
-				html += '<td><button class="btn-primary" onclick="Update()">Update</button>'
+				html += `<td class="uid"><input type="text" value="${res.id}"></td></tr>`
 				i++
 			}
 			element.innerHTML = html;
@@ -105,6 +105,8 @@ function Search(){
 	}
 }
 
+document.getElementById('updateButton').addEventListener('click',Update)
+
 function Update(){
 	let table,tr;
 	table = document.getElementById("Edit");
@@ -112,7 +114,7 @@ function Update(){
 	for (i = 0; i < tr.length; i++) {
 		td = tr[i].getElementsByTagName("input");
 		if (td) {
-			let name,address,phone,principle,interest,issue_date,return_date,amount;
+			let uid,name,address,phone,principle,interest,issue_date,return_date,amount;
 			name = td[0].value;
 			address = td[1].value;
 			phone = td[2].value;
@@ -121,13 +123,18 @@ function Update(){
 			amount = principle + interest;
 			issue_date = td[5].value;
 			return_date = td[6].value;
-			sql = `update  loan set address ='${address}',
+			uid = td[7].value;
+			console.log(td)
+			let sql = `update  loan set
+									name = '${name}',
+									idate = '${issue_date}',
+									address ='${address}',
 									phone = '${phone}',
 									principle = ${principle},
 									interest = ${interest},
 									amount = ${amount},
 									rdate = '${return_date}'
-					where name = '${name}' and idate = '${issue_date}'`
+					where id = '${uid}' `
 			con.query(sql,function (err) {
 				if (err)
 					throw err;
