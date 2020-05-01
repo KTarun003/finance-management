@@ -8,7 +8,7 @@ const con = mysql.createConnection({
 });
 function table() {
 	let element = document.getElementById('pending-loans')
-	let sql = 'select name,address,phone,principle,interest,idate,rdate,status from loan where (status = 3) and (rdate < CURRENT_DATE)';
+	let sql = 'select name,address,phone,principle,interest,idate,rdate,status,rate from loan where (status = 3) and (rdate < CURRENT_DATE)';
 	let i=0;
 	let res;
 	let html=``;
@@ -41,7 +41,15 @@ function table() {
 					mm2='0'+mm2
 				}
 				rdate = dd2 + '/' + mm2 + '/' + yyyy2;
-				html = html + `<tr><td class="text-center" >${res.name}</td><td class="text-center" >${res.address}</td><td class="text-center" >${res.phone}</td><td class="text-center" >${res.principle}</td><td class="text-center" >${res.interest}</td><td class="text-center" >${idate}</td><td class="text-center" >${rdate}</td>`
+				html = html + `<tr>
+									<td class="text-center" >${res.name}</td>
+									<td class="text-center" >${res.address}</td>
+									<td class="text-center" >${res.phone}</td>
+									<td class="text-center" >${res.principle}</td>
+									<td class="text-center" >${res.rate}</td>
+									<td class="text-center" >${res.interest}</td>
+									<td class="text-center" >${idate}</td>
+									<td class="text-center" >${rdate}</td>`
 				let stat = `${res.status}`;
 				switch (stat) {
 					case '0' : {

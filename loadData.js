@@ -61,21 +61,21 @@ function getData() {
 
 	});
 	// Total Number of Loans
-	con.query('SELECT COUNT(*) as num from loan',function (err, result){
+	con.query('SELECT COUNT(*) as num from loan where MONTH(idate) = MONTH(CURRENT_DATE)-1',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('NO_Loans')
 		element.innerHTML=`<span>${result[0].num}</span>`
 	})
 	// Total Principle
-	con.query('SELECT SUM(principle) as sum from recoveries',function (err, result){
+	con.query('SELECT SUM(principle) as sum from recoveries where MONTH(date) = MONTH(CURRENT_DATE)-1',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('Principle')
 		element.innerHTML=`<span>${result[0].sum}</span>`
 	})
 	// Total Interest
-	con.query('SELECT SUM(interest) as sum from recoveries',function (err, result){
+	con.query('SELECT SUM(interest) as sum from recoveries where MONTH(date) = MONTH(CURRENT_DATE)-1',function (err, result){
 		if (err)
 			throw err;
 		element = document.getElementById('Interest')

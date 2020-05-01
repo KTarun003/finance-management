@@ -9,7 +9,7 @@ const con = mysql.createConnection({
 
 function table() {
 	let element = document.getElementById('Edit')
-	let sql = 'select name,address,phone,principle,interest,idate,rdate,status,id from loan where status = 3';
+	let sql = 'select name,address,phone,principle,interest,idate,rdate,status,id,penalty,rate from loan where status = 3';
 	let i=0;
 	let res;
 	let html=``;
@@ -45,8 +45,10 @@ function table() {
 				html = html + `<tr><td class="text-center" ><input class="editable-cell" type="text" class="editable-cell" value="${res.name}"></td>
 								   <td class="text-center" ><input class="editable-cell" type="text" value="${res.address}"></td>
 								   <td class="text-center" ><input class="editable-cell" type="text" value="${res.phone}"></td>
-								   <td class="text-center" ><input class="editable-cell" type="text" value="${res.principle}"></td>
-								   <td class="text-center" ><input class="editable-cell" type="text" value="${res.interest}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="number" value="${res.principle}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="number" value="${res.rate}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="number" value="${res.interest}"></td>
+								   <td class="text-center" ><input class="editable-cell" type="number" value="${res.penalty}"></td>
 								   <td class="text-center" ><input class="editable-cell" type="date" value="${idate}"></td>
 								   <td class="text-center" ><input class="editable-cell" type="date" value="${rdate}"></td>`;
 				let stat = `${res.status}`;
@@ -114,16 +116,18 @@ function Update(){
 	for (i = 0; i < tr.length; i++) {
 		td = tr[i].getElementsByTagName("input");
 		if (td) {
-			let uid,name,address,phone,principle,interest,issue_date,return_date,amount;
+			let uid,name,address,phone,principle,interest,issue_date,return_date,amount,rate,penalty;
 			name = td[0].value;
 			address = td[1].value;
 			phone = td[2].value;
 			principle = td[3].value;
-			interest = td[4].value;
+			rate = td[4].value
+			interest = td[5].value;
+			penalty = td[6].value;
 			amount = principle + interest;
-			issue_date = td[5].value;
-			return_date = td[6].value;
-			uid = td[7].value;
+			issue_date = td[7].value;
+			return_date = td[8].value;
+			uid = td[9].value;
 			console.log(td)
 			let sql = `update  loan set
 									name = '${name}',
@@ -131,7 +135,9 @@ function Update(){
 									address ='${address}',
 									phone = '${phone}',
 									principle = ${principle},
+									rate = ${rate},
 									interest = ${interest},
+									penalty = ${penalty},
 									amount = ${amount},
 									rdate = '${return_date}'
 					where id = '${uid}' `
