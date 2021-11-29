@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Pending Loans</title>
-	<link href="./main.css" rel="stylesheet">
-	<link rel="icon" type="image/png" href="build/icon.png">
+	<title>Edit Details</title>
+	<link href="../main.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../../build/icon.png">
 	<style>
 		#Search-Input {
 			border-radius: 25px;
@@ -12,6 +12,12 @@
 			padding: 20px;
 			width: 100%;
 			height: 15px;
+		}
+		.editable-cell{
+			border: none;
+		}
+		.uid{
+			display: none;
 		}
 	</style>
 </head>
@@ -89,7 +95,7 @@
 					<ul class="vertical-nav-menu">
 						<li class="app-sidebar__heading">Dashboard</li>
 						<li>
-							<a href="index.html" class="mm-active">
+							<a href="../index.html" class="mm-active">
 								<i class="metismenu-icon pe-7s-rocket"></i>
 								Main Dashboard
 							</a>
@@ -162,17 +168,15 @@
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
 							<div class="page-title-icon">
-								<i class="pe-7s-browser icon-gradient bg-mean-fruit"></i>
+								<i class="pe-7s-browser icon-gradient bg-malibu-beach"></i>
 							</div>
-							<div>Pending Loans</div>
+							<div>Edit Details</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-12">
 					<div class="main-card mb-3 card">
-						<div class="card-header">List of Pending Loans
-
-						</div>
+						<div class="card-header">Loans</div>
 						<div>
 							<div class="input-holder">
 								<input type="text" id="Search-Input" placeholder="Enter Name To Search"/>
@@ -188,13 +192,14 @@
 									<th class="text-center">Principle</th>
 									<th class="text-center">Rate</th>
 									<th class="text-center">Interest</th>
+									<th class="text-center">Penalty</th>
 									<th class="text-center">Issue Date</th>
 									<th class="text-center">Return Date</th>
 									<th class="text-center">Status</th>
-
+									<th class="text-center"><button class="btn btn-primary" id="updateButton">Update</button></th>
 								</tr>
 								</thead>
-								<tbody id="pending-loans">
+								<tbody id="Edit">
 
 								</tbody>
 							</table>
@@ -206,5 +211,6 @@
 	</div>
 </div>
 </body>
-<script src="Pending.js"></script>
+<script src="../Edit.js"></script>
 </html>
+

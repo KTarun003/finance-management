@@ -1,4 +1,4 @@
-const mysql = require('mysql')
+const mysql = require('mysql2')
 let con = mysql.createConnection({
 	host: "localhost",
 	user: "con",
@@ -51,8 +51,8 @@ function getData() {
 					}
 				}
 				html = html +'<td class="text-center">\n' +
-					'\t\t\t\t\t\t\t\t\t\t\t\t<button type="button" class="btn btn-focus"><a class="btn-link" href="Interest.html">Interest</a></button>\n' +
-					'\t\t\t\t\t\t\t\t\t\t\t\t<button type="button" class="btn btn-focus"><a class="btn-link" href="Whole.html">Both</a></button>\n' +
+					'\t\t\t\t\t\t\t\t\t\t\t\t<button type="button" class="btn btn-focus"><a class="btn-link" href="pages/Interest.html">Interest</a></button>\n' +
+					'\t\t\t\t\t\t\t\t\t\t\t\t<button type="button" class="btn btn-focus"><a class="btn-link" href="pages/Whole.html">Both</a></button>\n' +
 					'\t\t\t\t\t\t\t\t\t\t\t</td>\n' +
 					'\t\t\t\t\t\t\t\t\t\t</tr>'
 			}

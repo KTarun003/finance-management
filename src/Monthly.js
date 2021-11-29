@@ -1,4 +1,4 @@
-const mysql = require('mysql')
+const mysql = require('mysql2')
 const uuid = require('uuid')
 const con = mysql.createConnection({
 	host: 'localhost',

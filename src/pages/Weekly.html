@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Recover Loan</title>
-	<link href="./main.css" rel="stylesheet">
-	<link rel="icon" type="image/png" href="build/icon.png">
+	<title>Add New Loan</title>
+	<link href="../main.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../../build/icon.png">
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -80,7 +80,7 @@
 					<ul class="vertical-nav-menu">
 						<li class="app-sidebar__heading">Dashboard</li>
 						<li>
-							<a href="index.html" class="mm-active">
+							<a href="../index.html" class="mm-active">
 								<i class="metismenu-icon pe-7s-rocket"></i>
 								Main Dashboard
 							</a>
@@ -153,39 +153,48 @@
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
 							<div class="page-title-icon">
-								<i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
+								<i class="pe-7s-add-user icon-gradient bg-mean-fruit"></i>
 							</div>
-							<div>Recover Loan</div>
+							<div>Add New Loan(Weekly Interest)</div>
 						</div>
 					</div>
 				</div>
-				<div class="form">
-					<form class="" name="Whole-form">
-						<div class="position-relative row form-group"><label for="Name" class="col-sm-2 col-form-label">Name</label>
-							<div class="col-sm-10"><input name="name" id="Name" placeholder="Enter Name" type="text" class="form-control"></div>
+				<form class="" name="Weekly-form">
+					<div class="position-relative row form-group"><label for="Name" class="col-sm-2 col-form-label">Name</label>
+						<div class="col-sm-10"><input name="name" id="Name" placeholder="Enter Name" type="text" class="form-control"></div>
+					</div>
+					<div class="position-relative row form-group"><label for="address" class="col-sm-2 col-form-label">Address</label>
+						<div class="col-sm-10"><input name="addres" id="address" placeholder="Enter Address" type="text" class="form-control"></div>
+					</div>
+					<div class="position-relative row form-group"><label for="phone" class="col-sm-2 col-form-label">Phone Number</label>
+						<div class="col-sm-10"><input name="phone" id="phone" placeholder="Enter Phone Number" type="text" class="form-control"></div>
+					</div>
+					<div class="position-relative row form-group"><label for="Asset" class="col-sm-2 col-form-label">Asset</label>
+						<div class="col-sm-10"><input name="asset" id="Asset" placeholder="Enter Asset" type="text" class="form-control"></div>
+					</div>
+					<div class="position-relative row form-group"><label for="principle" class="col-sm-2 col-form-label">Principle</label>
+						<div class="col-sm-10"><input name="principle" id="principle" placeholder="Enter Principle Amount" type="text" class="form-control"></div>
+					</div>
+					<div class="position-relative row form-group"><label for="rate" class="col-sm-2 col-form-label">Rate</label>
+						<div class="col-sm-10"><input name="rate" id="rate" placeholder="Enter Interest Rate" type="text" class="form-control"></div>
+					</div>
+					<div class="position-relative row form-group"><label for="period" class="col-sm-2 col-form-label">Period</label>
+						<div class="col-sm-10"><input name="period" id="period" placeholder="Enter Period of Loan" type="text" class="form-control"></div>
+					</div>
+					<div class="position-relative row form-group"><label for="times" class="col-sm-2 col-form-label">No of Loans</label>
+						<div class="col-sm-10"><input name="times" id="times" placeholder="Enter Number of Loans" type="text" class="form-control"></div>
+					</div>
+
+					<div class="position-relative row form-check">
+						<div class="col-sm-10 offset-sm-2">
+							<button class="btn btn-primary" id="btn-submit-Weekly">Submit</button>
 						</div>
-						<div class="position-relative row form-group"><label for="Issue_Date" class="col-sm-2 col-form-label">Issue Date</label>
-							<div class="col-sm-10"><input name="date" id="Issue_Date" placeholder="" type="date" class="form-control"></div>
-						</div>
-						<div class="position-relative row form-check">
-							<div class="col-sm-10 offset-sm-2">
-								<button class="btn btn-secondary" id="btn-calc-whole" >Calculate Amount</button>
-							</div>
-						</div>
-						<div class="position-relative row form-group"><label for="Amount" class="col-sm-2 col-form-label">Amount</label>
-							<div class="col-sm-10"><input name="amount" id="Amount" placeholder="" type="text" class="form-control"></div>
-						</div>
-						<div class="position-relative row form-check">
-							<div class="col-sm-10 offset-sm-2">
-								<button class="btn btn-primary" id="btn-submit-whole">Submit</button>
-							</div>
-						</div>
-					</form>
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
 </body>
-<script src="Whole.js"></script>
+<script src="../Weekly.js"></script>
 </html>

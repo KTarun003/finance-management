@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Recover Interest</title>
-	<link href="./main.css" rel="stylesheet">
-	<link rel="icon" type="image/png" href="build/icon.png">
-
+	<meta charset="UTF-8">
+	<title>Pending Loans</title>
+	<link href="../main.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../../build/icon.png">
+	<style>
+		#Search-Input {
+			border-radius: 25px;
+			border: 2px solid RoyalBlue;
+			padding: 20px;
+			width: 100%;
+			height: 15px;
+		}
+	</style>
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -81,7 +89,7 @@
 					<ul class="vertical-nav-menu">
 						<li class="app-sidebar__heading">Dashboard</li>
 						<li>
-							<a href="index.html" class="mm-active">
+							<a href="../index.html" class="mm-active">
 								<i class="metismenu-icon pe-7s-rocket"></i>
 								Main Dashboard
 							</a>
@@ -154,39 +162,48 @@
 					<div class="page-title-wrapper">
 						<div class="page-title-heading">
 							<div class="page-title-icon">
-								<i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
+								<i class="pe-7s-browser icon-gradient bg-malibu-beach"></i>
 							</div>
-							<div>Recover Interest</div>
+							<div>List Of Loans</div>
 						</div>
 					</div>
 				</div>
-				<div>
-					<form class="" name="Interest-form">
-						<div class="position-relative row form-group"><label for="Name" class="col-sm-2 col-form-label">Name</label>
-							<div class="col-sm-10"><input name="name" id="Name" placeholder="Enter Name" type="text" class="form-control"></div>
-						</div>
-						<div class="position-relative row form-group"><label for="Issue_Date" class="col-sm-2 col-form-label">Issue Date</label>
-							<div class="col-sm-10"><input name="date" id="Issue_Date" placeholder="" type="date" class="form-control"></div>
-						</div>
-						<div class="position-relative row form-check">
-							<div class="col-sm-10 offset-sm-2">
-								<button class="btn btn-secondary" id="btn-calc-interest" >Calculate Amount</button>
+				<div class="col-md-12">
+					<div class="main-card mb-3 card">
+						<div class="card-header">Loans</div>
+						<div>
+							<div class="input-holder">
+								<input type="text" id="Search-Input" placeholder="Enter Name To Search"/>
 							</div>
 						</div>
-						<div class="position-relative row form-group"><label for="Amount" class="col-sm-2 col-form-label">Amount</label>
-							<div class="col-sm-10"><input name="interest" id="Amount" placeholder="" type="text" class="form-control"></div>
+						<div class="table-responsive">
+							<table class="align-middle mb-0 table table-borderless table-striped table-hover">
+								<thead>
+								<tr>
+									<th class="text-center">Name</th>
+									<th class="text-center">Address</th>
+									<th class="text-center">Phone</th>
+									<th class="text-center">Principle</th>
+									<th class="text-center">Rate</th>
+									<th class="text-center">Interest</th>
+									<th class="text-center">Penalty</th>
+									<th class="text-center">Issue Date</th>
+									<th class="text-center">Return Date</th>
+									<th class="text-center">Status</th>
+
+								</tr>
+								</thead>
+								<tbody id="loans">
+
+								</tbody>
+							</table>
 						</div>
-						<div class="position-relative row form-check">
-							<div class="col-sm-10 offset-sm-2">
-								<button class="btn btn-primary" id="btn-submit-interest">Submit</button>
-							</div>
-						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 </body>
-<script src="Interest.js"></script>
+<script src="../List.js"></script>
 </html>

@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Add New Loan</title>
-	<link href="./main.css" rel="stylesheet">
-	<link rel="icon" type="image/png" href="build/icon.png">
+	<link href="../main.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../../build/icon.png">
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -80,7 +80,7 @@
 					<ul class="vertical-nav-menu">
 						<li class="app-sidebar__heading">Dashboard</li>
 						<li>
-							<a href="index.html" class="mm-active">
+							<a href="../index.html" class="mm-active">
 								<i class="metismenu-icon pe-7s-rocket"></i>
 								Main Dashboard
 							</a>
@@ -155,11 +155,11 @@
 							<div class="page-title-icon">
 								<i class="pe-7s-add-user icon-gradient bg-mean-fruit"></i>
 							</div>
-							<div>Add New Loan(Weekly Interest)</div>
+							<div>Add New Loan (Monthly Interest)</div>
 						</div>
 					</div>
 				</div>
-				<form class="" name="Weekly-form">
+				<form class="" name="Monthly-form">
 					<div class="position-relative row form-group"><label for="Name" class="col-sm-2 col-form-label">Name</label>
 						<div class="col-sm-10"><input name="name" id="Name" placeholder="Enter Name" type="text" class="form-control"></div>
 					</div>
@@ -178,16 +178,13 @@
 					<div class="position-relative row form-group"><label for="rate" class="col-sm-2 col-form-label">Rate</label>
 						<div class="col-sm-10"><input name="rate" id="rate" placeholder="Enter Interest Rate" type="text" class="form-control"></div>
 					</div>
-					<div class="position-relative row form-group"><label for="period" class="col-sm-2 col-form-label">Period</label>
-						<div class="col-sm-10"><input name="period" id="period" placeholder="Enter Period of Loan" type="text" class="form-control"></div>
-					</div>
-					<div class="position-relative row form-group"><label for="times" class="col-sm-2 col-form-label">No of Loans</label>
-						<div class="col-sm-10"><input name="times" id="times" placeholder="Enter Number of Loans" type="text" class="form-control"></div>
+					<div class="position-relative row form-group"><label for="Return_Date" class="col-sm-2 col-form-label">Return Date</label>
+						<div class="col-sm-10"><input name="date" id="Return_Date" placeholder="" type="date" class="form-control"></div>
 					</div>
 
 					<div class="position-relative row form-check">
 						<div class="col-sm-10 offset-sm-2">
-							<button class="btn btn-primary" id="btn-submit-Weekly">Submit</button>
+							<button class="btn btn-primary" id="btn-submit-Monthly">Submit</button>
 						</div>
 					</div>
 				</form>
@@ -196,5 +193,5 @@
 	</div>
 </div>
 </body>
-<script src="Weekly.js"></script>
+<script src="../Monthly.js"></script>
 </html>
