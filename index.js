@@ -1,5 +1,4 @@
 'use strict';
-
 const path = require('path');
 const {app, BrowserWindow, Menu} = require('electron');
 /// const {autoUpdater} = require('electron-updater');

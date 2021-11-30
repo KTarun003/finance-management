@@ -30,8 +30,8 @@ const helpSubmenu = [
 			const body = `<!-- Please succinctly describe your issue and steps to reproduce it. -->${debugInfo()}`;
 
 			openNewGitHubIssue({
-				user: 'sindresorhus',
-				repo: 'electron-boilerplate',
+				user: 'KTarun003',
+				repo: 'finance-management',
 				body
 			});
 		}
@@ -45,7 +45,7 @@ if (!is.macos) {
 		},
 		aboutMenuItem({
 			icon: path.join(__dirname, 'static', 'icon.png'),
-			text: 'Created by Your Name'
+			text: 'Created by K Tarun Reddy'
 		})
 	);
 }
@@ -60,7 +60,7 @@ const debugSubmenu = [
 	{
 		label: 'Show App Data',
 		click() {
-			shell.openItem(app.getPath('userData'));
+			openItem(app.getPath('userData'));
 		}
 	},
 	{
@@ -77,7 +77,7 @@ const debugSubmenu = [
 	{
 		label: 'Delete App Data',
 		click() {
-			shell.moveItemToTrash(app.getPath('userData'));
+			moveItemToTrash(app.getPath('userData'));
 			app.relaunch();
 			app.quit();
 		}

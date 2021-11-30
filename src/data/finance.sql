@@ -37,7 +37,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `analyse` ()  BEGIN
     set Pperc = ((Cprinciple - Pprinciple)/Pprinciple)*100;
     if((select exists(select * from analytics where month = month(CURRENT_DATE()) AND year = YEAR(CURRENT_DATE))) = 0) then
 		insert into analytics values(month(current_date()),year(current_date()),Cprinciple,Cinterest,Pperc,Iperc);
-	
+
     else
 		update analytics set principle = Cprinciple,interest = Cinterest , p_percent = Pperc , i_percent = Iperc where `month` = (month(CURRENT_DATE())) AND `year` = YEAR(CURRENT_DATE());
     end if;
@@ -69,6 +69,7 @@ CREATE TABLE `analytics` (
 
 DROP TABLE IF EXISTS `loan`;
 CREATE TABLE `loan` (
+  `id` varchar(450) NOT NULL,
   `name` varchar(30) NOT NULL,
   `phone` char(10) DEFAULT NULL,
   `address` varchar(45) DEFAULT NULL,

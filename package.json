@@ -30,9 +30,11 @@
 		"electron-util": "^0.13.0",
 		"express": "^4.17.1",
 		"mysql2": "^2.3.3",
+		"typeorm": "^0.2.41",
 		"uuid": "^7.0.3"
 	},
 	"devDependencies": {
+		"@types/node": "^16.11.10",
 		"electron": "^11.5.0",
 		"electron-builder": "^21.2.0",
 		"np": "^5.0.3",
