@@ -1,12 +1,34 @@
-import React from 'react'
+import React from 'react';
+import Header from './components/header/header';
+import Loans from './pages/loans';
+import Recoveries from './pages/recoveries';
+import Settings from './pages/settings';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link
+} from "react-router-dom";
 
-const App = () => {
-	return (
-		<div className='app'>
-			<h1>React Electron Boilerplate</h1>
-			<p>This is a simple boilerplate for using React with Electron</p>
-		</div>
-	)
+class App extends React.Component {
+	render() {
+		return (
+			<div>
+				<Router>
+					<Header />
+					<main >
+						<Routes>
+							<Route path="/about" element={<Loans />} />
+
+							<Route path="/users" element={<Recoveries />} />
+
+							<Route path="/" element={<Settings />} />
+						</Routes>
+					</main>
+				</Router>
+			</div>
+		);
+	}
 }
 
 export default App

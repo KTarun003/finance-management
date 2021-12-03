@@ -1,86 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="Added React and deleted unused files">
-      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.build.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.dev.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b31e3b95-d00f-48f4-b193-43212293d24a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b31e3b95-d00f-48f4-b193-43212293d24a/storage_v2/_src_/schema/finance.2k8kzQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b31e3b95-d00f-48f4-b193-43212293d24a/storage_v2/_src_/schema/finance.2k8kzQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tarun.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/finance-management.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Pe-icon-7-stroke.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Pe-icon-7-stroke.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Pe-icon-7-stroke.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Pe-icon-7-stroke.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Text.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/logo-inverse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/background@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/finance.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loadData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/analytics.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/loan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/profit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/recoveries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Interest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/List.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Monthly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Pending.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Principle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Recoveries.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Weekly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Whole.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/Edit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/Interest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/List.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/Monthly.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/Pending.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/Principle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/Recoveries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/Weekly.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/scripts/Whole.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Icon.png" beforeDir="false" />
+    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="Added Sidebar and Navigation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -97,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="react" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,10 +43,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Coding\Javascript\finance-management\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -128,29 +57,39 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Coding\Javascript\finance-management" />
       <recent name="C:\Coding\Javascript\finance-management\src" />
+      <recent name="C:\Coding\Javascript\finance-management" />
       <recent name="C:\Coding\Javascript\finance-management\src\models" />
       <recent name="C:\Coding\Javascript\finance-management\src\pages\scripts" />
       <recent name="C:\Coding\Javascript\finance-management\src\data" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
-    <configuration name="pack" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="pack" />
+        <script value="build" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="package-win" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="package" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="package-win" />
+        <script value="package" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prod" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -166,12 +105,18 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.package" />
+      <item itemvalue="npm.start" />
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.prod" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.package-win" />
-        <item itemvalue="npm.pack" />
-        <item itemvalue="npm.start" />
+        <item itemvalue="npm.prod" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.package" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -190,7 +135,10 @@
       <workItem from="1638294804221" duration="776000" />
       <workItem from="1638295604205" duration="2323000" />
       <workItem from="1638460719693" duration="897000" />
-      <workItem from="1638552595284" duration="1105000" />
+      <workItem from="1638552595284" duration="1593000" />
+      <workItem from="1638554227033" duration="49000" />
+      <workItem from="1638554281857" duration="6709000" />
+      <workItem from="1638626632239" duration="555000" />
     </task>
     <task id="LOCAL-00001" summary="Added Refactored Directories">
       <created>1638212508859</created>
@@ -227,7 +175,35 @@
       <option name="project" value="LOCAL" />
       <updated>1638295255804</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removed all files and Added React Electron Template">
+      <created>1638554003023</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1638554003023</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Removed all files and Added React Electron Template">
+      <created>1638554142336</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1638554142336</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Removed all files and Added React Electron Template">
+      <created>1638554185509</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1638554185509</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added Sidebar and Navigation">
+      <created>1638561057915</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1638561057915</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,19 +214,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="dev" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -263,6 +227,8 @@
     <MESSAGE value="Added Refactored Directories &amp; updated mysql to mysql2" />
     <MESSAGE value="Added Models and Refactored Scripts" />
     <MESSAGE value="Added React and deleted unused files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added React and deleted unused files" />
+    <MESSAGE value="Removed all files and Added React Electron Template" />
+    <MESSAGE value="Added Sidebar and Navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Sidebar and Navigation" />
   </component>
 </project>
