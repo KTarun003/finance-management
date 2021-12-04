@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="Added Sidebar and Navigation">
-      <change afterPath="$PROJECT_DIR$/src/pages/complete/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/edit/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/interest/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/monthly/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/pending/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/principle/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/weekly/index.js" afterDir="false" />
+    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/models/analytics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/loans.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/profit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/recoveries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/settings/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/settings/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/monthly/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/monthly/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +24,8 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>

@@ -4,7 +4,7 @@ class Monthly extends Component {
 	render() {
 		return (
 			<div>
-				<h2>Loans Page</h2>
+				<h2>Monthly Page</h2>
 			</div>
 		);
 	}

@@ -1,5 +1,11 @@
 import React from 'react';
 import Header from './components/header/header';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link
+} from "react-router-dom";
 
 // Importing pages
 import Complete from './pages/complete';
@@ -13,13 +19,6 @@ import Principle from './pages/principle';
 import Recoveries from './pages/recoveries';
 import Settings from './pages/settings';
 import Weekly from './pages/weekly';
-
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	Link
-} from "react-router-dom";
 
 class App extends React.Component {
 	render() {
@@ -40,6 +39,7 @@ class App extends React.Component {
 							<Route path="/recoveries" element={<Recoveries />} />
 							<Route path="/settings" element={<Settings />} />
 							<Route path="/weekly" element={<Weekly />} />
+							<Route path="*" element={<Dashboard />} />
 						</Routes>
 					</main>
 				</Router>
