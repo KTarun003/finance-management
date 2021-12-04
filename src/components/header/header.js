@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import {
 	ProSidebar,
 	Menu,
+	SubMenu,
 	MenuItem,
 	SidebarHeader,
 	SidebarFooter,
@@ -13,10 +14,11 @@ import {
 } from "react-pro-sidebar";
 
 //import icons from react icons
-import { FaList, FaRegHeart } from "react-icons/fa";
-import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-import { RiPencilLine } from "react-icons/ri";
-import { BiCog } from "react-icons/bi";
+import { FaThList, FaRegHeart, FaListUl, FaList, FaListAlt } from "react-icons/fa";
+import { RiAdminFill } from "react-icons/ri";
+import { BiCog, BiBookAdd } from "react-icons/bi";
+import { MdAnalytics, MdPersonAdd, MdAccountBalance, MdEdit } from "react-icons/md";
+import { AiOutlineFileAdd } from "react-icons/ai";
 
 
 //import sidebar css from react-pro-sidebar module and our custom css
@@ -25,21 +27,10 @@ import "./Header.css";
 
 
 const Header = () => {
-
-	//create initial menuCollapse state using useState hook
-	const [menuCollapse, setMenuCollapse] = useState(false)
-
-	//create a custom function that will change menucollapse state from false to true and true to false
-	const menuIconClick = () => {
-		//condition checking to change state from true to false and vice versa
-		menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
-	};
-
 	return (
 		<>
 			<div id="header">
-				{/* collapsed props to change menu size using menucollapse state */}
-				<ProSidebar collapsed={menuCollapse}>
+				<ProSidebar>
 					<SidebarHeader>
 						<div className="logotext">
 							<p>Finance Management</p>
@@ -47,19 +38,29 @@ const Header = () => {
 					</SidebarHeader>
 					<SidebarContent>
 						<Menu iconShape="square">
-							<MenuItem active={true} icon={<FiHome />}>
-								Home
-								<Link to="/" />
-							</MenuItem>
-							<MenuItem icon={<FaList />} >Category <Link to="/about" /></MenuItem>
-							<MenuItem icon={<FaRegHeart />}>Favourite <Link to="/users" /></MenuItem>
-							<MenuItem icon={<RiPencilLine />}>Author <Link to="/about" /></MenuItem>
-							<MenuItem icon={<BiCog />}>Settings <Link to="/users" /></MenuItem>
+							<MenuItem icon={<MdAnalytics />}> Dashboard <Link to="/" /> </MenuItem>
+							<SubMenu title="New Records" icon={<MdAccountBalance />}>
+								<MenuItem icon={<MdPersonAdd />}> Monthly <Link to="/monthly" /></MenuItem>
+								<MenuItem icon={<MdPersonAdd />}> Weekly Interest <Link to="/weekly" /></MenuItem>
+							</SubMenu>
+							<SubMenu title="New Recovery" icon={<BiBookAdd />}>
+								<MenuItem icon={<AiOutlineFileAdd />}> Principle <Link to="/principle" /></MenuItem>
+								<MenuItem icon={<AiOutlineFileAdd />}> Interest <Link to="/interest" /></MenuItem>
+								<MenuItem icon={<AiOutlineFileAdd />}> Complete <Link to="/complete" /></MenuItem>
+							</SubMenu>
+							<SubMenu title="Lists" icon={<FaThList />}>
+								<MenuItem icon={<FaList />}> All Loans <Link to="/loans" /></MenuItem>
+								<MenuItem icon={<FaListUl />}> Recoveries <Link to="/recoveries" /></MenuItem>
+								<MenuItem icon={<FaListAlt />}> Pending Loans <Link to="/pending" /></MenuItem>
+							</SubMenu>
+							<SubMenu title="Admin Features" icon={<RiAdminFill />}>
+								<MenuItem icon={<FaList />}> Edit <Link to="/edit" /></MenuItem>
+							</SubMenu>
 						</Menu>
 					</SidebarContent>
 					<SidebarFooter>
 						<Menu iconShape="square">
-							<MenuItem icon={<FiLogOut />}>Logout <Link to="/logout" /></MenuItem>
+							<MenuItem icon={<BiCog />}>Settings <Link to="/settings" /></MenuItem>
 						</Menu>
 					</SidebarFooter>
 				</ProSidebar>
