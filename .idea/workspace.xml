@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/analytics.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/loans.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/profit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/recoveries.js" afterDir="false" />
+    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="Added React and deleted unused files">
+      <change afterPath="$PROJECT_DIR$/data/database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/monthly/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/monthly/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +42,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -122,10 +114,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.package" />
-      <item itemvalue="npm.start" />
       <item itemvalue="npm.build" />
+      <item itemvalue="npm.package" />
       <item itemvalue="npm.prod" />
+      <item itemvalue="npm.start" />
     </list>
     <recent_temporary>
       <list>
@@ -155,6 +147,8 @@
       <workItem from="1638554227033" duration="49000" />
       <workItem from="1638554281857" duration="6709000" />
       <workItem from="1638626632239" duration="5317000" />
+      <workItem from="1638729427529" duration="190000" />
+      <workItem from="1638729634631" duration="214000" />
     </task>
     <task id="LOCAL-00001" summary="Added Refactored Directories">
       <created>1638212508859</created>

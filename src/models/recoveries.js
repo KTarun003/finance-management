@@ -2,6 +2,8 @@ import { Entity, Column} from "typeorm";
 
 @Entity
 export class Recoveries{
+	@Column
+	loan_id: string;
 
 	@Column()
 	name: string;
