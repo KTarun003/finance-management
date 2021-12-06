@@ -17,7 +17,7 @@ class Table extends Component {
 						{this.props.title}
 					</div>
 					<div className="table-responsive ">
-						<table className="align-middle mb-0 table table-borderless table-striped table-hover text-white">
+						<table className="align-middle mb-0 table table-borderless table-hover text-white">
 							<thead>
 								<tr>
 									<th>Name</th>

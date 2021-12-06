@@ -24,7 +24,7 @@ class Dashboard extends Component {
 					<Card bgColor="bg-happy-green" heading=" Total Interest Received This Month " num={250} />
 				</div>
 				<div className="row">
-					<Table title="Today's Pending Loans" bgColor="bg-dark" />
+					<Table title="Today's Pending Loans" bgColor="bg-secondary" />
 					<Table title="Tomorrow's Pending Loans" bgColor="bg-secondary" />
 				</div>
 			</div>
