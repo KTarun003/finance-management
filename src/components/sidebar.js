@@ -49,15 +49,15 @@ class Sidebar extends Component {
 							</li>
 							<li className="app-sidebar__heading">Lists</li>
 							<li>
-								<Link to="/recoveries" >
-									<i className="metismenu-icon pe-7s-graph2">
-									</i>Recoveries
-								</Link>
-							</li>
-							<li>
 								<Link to="/loans" >
 									<i className="metismenu-icon pe-7s-graph2">
 									</i>All Loans
+								</Link>
+							</li>
+							<li>
+								<Link to="/recoveries" >
+									<i className="metismenu-icon pe-7s-graph2">
+									</i>Recoveries
 								</Link>
 							</li>
 							<li>

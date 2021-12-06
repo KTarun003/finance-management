@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="Added Dashboard UI &amp;&amp; Changed to previous UI">
+    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="Added New Loans UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/monthly/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/monthly/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/weekly/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/weekly/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/complete/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/complete/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/interest/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/interest/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/principle/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/principle/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/pages/dashboard/index.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/sidebar.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/pages/weekly/index.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/App.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -161,7 +163,7 @@
       <workItem from="1638729427529" duration="190000" />
       <workItem from="1638729634631" duration="4461000" />
       <workItem from="1638734164166" duration="2033000" />
-      <workItem from="1638802334293" duration="1947000" />
+      <workItem from="1638802334293" duration="2569000" />
     </task>
     <task id="LOCAL-00001" summary="Added Refactored Directories">
       <created>1638212508859</created>
@@ -282,7 +284,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638803739651</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added New Loans UI">
+      <created>1638804560760</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1638804560760</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added New Loans UI">
+      <created>1638804567985</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1638804567985</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +328,7 @@
     <MESSAGE value="Added Dashboard Cards" />
     <MESSAGE value="Added Dashboard Cards &amp;&amp; Changed to previous UI" />
     <MESSAGE value="Added Dashboard UI &amp;&amp; Changed to previous UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Dashboard UI &amp;&amp; Changed to previous UI" />
+    <MESSAGE value="Added New Loans UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added New Loans UI" />
   </component>
 </project>
