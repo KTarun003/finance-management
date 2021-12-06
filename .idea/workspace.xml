@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="Added Dashboard Cards &amp;&amp; Changed to previous UI">
+    <list default="true" id="111c5725-1fb7-4f43-bef3-4dcd950743c4" name="Changes" comment="Added Dashboard UI &amp;&amp; Changed to previous UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/monthly/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/monthly/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/weekly/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/weekly/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +161,7 @@
       <workItem from="1638729427529" duration="190000" />
       <workItem from="1638729634631" duration="4461000" />
       <workItem from="1638734164166" duration="2033000" />
-      <workItem from="1638802334293" duration="1211000" />
+      <workItem from="1638802334293" duration="1947000" />
     </task>
     <task id="LOCAL-00001" summary="Added Refactored Directories">
       <created>1638212508859</created>
@@ -281,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638736214198</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added Dashboard UI &amp;&amp; Changed to previous UI">
+      <created>1638803739651</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1638803739651</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +311,7 @@
     <MESSAGE value="Added Sql File" />
     <MESSAGE value="Added Dashboard Cards" />
     <MESSAGE value="Added Dashboard Cards &amp;&amp; Changed to previous UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Dashboard Cards &amp;&amp; Changed to previous UI" />
+    <MESSAGE value="Added Dashboard UI &amp;&amp; Changed to previous UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Dashboard UI &amp;&amp; Changed to previous UI" />
   </component>
 </project>
