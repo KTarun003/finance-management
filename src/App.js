@@ -22,7 +22,7 @@ import Weekly from './pages/weekly';
 class App extends React.Component {
 	render() {
 		return (
-			<div className="app-container app-theme-white body-tabs-shadow fixed-sidebar">
+			<div className="app-container app-theme-white body-tabs-shadow">
 				<div className="app-main">
 					<Router>
 						<Sidebar />

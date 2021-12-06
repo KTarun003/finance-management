@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PageTitle from '../../components/pageTitle';
-import './edit.css'
+import SearchBar from '../../components/searchBar';
 
 class Edit extends Component {
 	render() {
@@ -11,9 +11,7 @@ class Edit extends Component {
 					<div className="col-md-12">
 						<div className="main-card mb-3 card">
 							<div className="card-header">Loans</div>
-							<div className="input-holder">
-								<input type="text" id="searchInput" placeholder="Enter Name To Search"/>
-							</div>
+							<SearchBar />
 							<div className="table-responsive">
 								<table className="align-middle mb-0 table table-borderless table-striped table-hover">
 									<thead>

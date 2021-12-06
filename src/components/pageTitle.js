@@ -7,7 +7,7 @@ class PageTitle extends Component {
 				<div className="page-title-wrapper row">
 					<div className="page-title-heading col-md-10">
 						<div className="page-title-icon">
-							<i className="pe-7s-menu icon-gradient bg-mean-fruit"></i>
+							<i className="pe-7s-culture icon-gradient bg-mean-fruit"></i>
 						</div>
 						{this.props.title}
 					</div>

@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import PageTitle from '../../components/pageTitle';
 
 class Settings extends Component {
 	render() {
 		return (
-			<div>
-				<h2>Settings Page</h2>
+			<div className="app-main__inner">
+				<PageTitle title="Settings Page" />
 			</div>
 		);
 	}
