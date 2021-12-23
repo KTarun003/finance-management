@@ -21,7 +21,11 @@
     "postpackage": "electron-packager ./ --out=./release-builds"
   },
   "dependencies": {
+    "apollo-boost": "^0.4.9",
+    "graphql": "^14.7.0",
+    "graphql-tag": "^2.12.6",
     "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
     "react-router-dom": "^6.0.2"
   },

@@ -3,6 +3,24 @@ import SearchBar from './searchBar';
 import LoanRow from './loanRow';
 
 class LoansTable extends Component {
+
+	setStatus(l){
+		if(l.status === "Not Paid"){
+			l.statusBadge = "badge badge-warning"
+		}
+		else if(l.status === "Interest Paid"){
+			l.statusBadge = "badge badge-info"
+		}
+		else if(l.status === "Paid"){
+			l.statusBadge = "badge badge-success"
+		}
+		else {
+			l.status = "Error";
+			l.statusBadge = "badge badge-danger";
+		}
+
+	}
+
 	render() {
 		return (
 			<div className="row">
@@ -23,7 +41,12 @@ class LoansTable extends Component {
 								</tr>
 								</thead>
 								<tbody>
-								{this.props.loans.map((l) => <LoanRow loan={l}/>)}
+								{
+									this.props.loans.map((l) => {
+										this.setStatus(l);
+										return <LoanRow key={l.id} loan={l}/>;
+									})
+								}
 								</tbody>
 							</table>
 						</div>

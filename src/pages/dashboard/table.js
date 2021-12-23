@@ -9,10 +9,27 @@ let loan = {
 };
 let badge = "badge badge-success";
 class Table extends Component {
+
+	setBadge(l){
+		if(l.status === "Not Paid"){
+			l.statusBadge = "badge badge-warning"
+		}
+		else if(l.status === "Interest Paid"){
+			l.statusBadge = "badge badge-info"
+		}
+		else if(l.status === "Paid"){
+			l.statusBadge = "badge badge-success"
+		}
+		else {
+			l.status = "Error";
+			l.statusBadge = "badge badge-danger";
+		}
+	}
+
 	render() {
 		return (
 			<div className="col-md-6">
-				<div className={"main-card mb-3 card text-white "+this.props.bgColor}>
+				<div className={"main-card mb-3 card text-white bg-royal"}>
 					<div className="card-header">
 						{this.props.title}
 					</div>
@@ -28,10 +45,11 @@ class Table extends Component {
 								</tr>
 							</thead>
 							<tbody>
-								<TableRow className="text-white" loan={loan} statusBadge={badge} />
-								<TableRow className="text-white" loan={loan} statusBadge={badge} />
-								<TableRow className="text-white" loan={loan} statusBadge={badge} />
-								<TableRow className="text-white" loan={loan} statusBadge={badge} />
+							{this.props.loans.map(l =>{
+
+								return	<TableRow className="text-white" key={l.id} loan={l} statusBadge={l.statusBadge} />
+								}
+							)}
 							</tbody>
 						</table>
 					</div>

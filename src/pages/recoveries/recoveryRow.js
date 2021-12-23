@@ -7,7 +7,9 @@ class RecoveryRow extends Component {
 				<td>{this.props.recovery.name}</td>
 				<td>{this.props.recovery.principle}</td>
 				<td>{this.props.recovery.interest}</td>
+				<td>{this.props.recovery.amount}</td>
 				<td>{this.props.recovery.date}</td>
+				<td><div className={this.props.recovery.badge}>{this.props.recovery.recoveryType}</div></td>
 			</tr>
 		);
 	}
