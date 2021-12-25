@@ -16,7 +16,6 @@ import Interest from './pages/interest';
 import Loans from './pages/loans';
 import Monthly from './pages/monthly';
 import Pending from './pages/pending';
-import Principle from './pages/principle';
 import Recoveries from './pages/recoveries';
 import Settings from './pages/settings';
 import Weekly from './pages/weekly';
@@ -28,7 +27,7 @@ const client = new ApolloClient({
 class App extends React.Component {
 	render() {
 		return (
-			<div className="app-container body-tabs-shadow">
+			<div className="app-container app-theme-white body-tabs-shadow">
 				<div className="app-main">
 					<ApolloProvider client={client} >
 						<Router>
@@ -42,7 +41,6 @@ class App extends React.Component {
 									<Route path="/loans" element={<Loans />} />
 									<Route path="/monthly" element={<Monthly />} />
 									<Route path="/pending" element={<Pending />} />
-									<Route path="/principle" element={<Principle />} />
 									<Route path="/recoveries" element={<Recoveries />} />
 									<Route path="/settings" element={<Settings />} />
 									<Route path="/weekly" element={<Weekly />} />

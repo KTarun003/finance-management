@@ -17,18 +17,11 @@ class Edit extends Component {
 									<thead>
 									<tr>
 										<th className="text-center">Name</th>
-										<th className="text-center">Address</th>
-										<th className="text-center">Phone</th>
 										<th className="text-center">Principle</th>
-										<th className="text-center">Rate</th>
 										<th className="text-center">Interest</th>
-										<th className="text-center">Penalty</th>
 										<th className="text-center">Issue Date</th>
 										<th className="text-center">Return Date</th>
 										<th className="text-center">Status</th>
-										<th className="text-center">
-											<button className="btn btn-primary" id="updateButton">Update</button>
-										</th>
 									</tr>
 									</thead>
 									<tbody id="Edit">

@@ -1,25 +1,9 @@
 import React, {Component} from 'react';
 import SearchBar from './searchBar';
 import LoanRow from './loanRow';
+import {setBadge} from '../helpers/ui'
 
 class LoansTable extends Component {
-
-	setStatus(l){
-		if(l.status === "Not Paid"){
-			l.statusBadge = "badge badge-warning"
-		}
-		else if(l.status === "Interest Paid"){
-			l.statusBadge = "badge badge-info"
-		}
-		else if(l.status === "Paid"){
-			l.statusBadge = "badge badge-success"
-		}
-		else {
-			l.status = "Error";
-			l.statusBadge = "badge badge-danger";
-		}
-
-	}
 
 	render() {
 		return (
@@ -43,7 +27,7 @@ class LoansTable extends Component {
 								<tbody>
 								{
 									this.props.loans.map((l) => {
-										this.setStatus(l);
+										l.statusBadge = setBadge(l);
 										return <LoanRow key={l.id} loan={l}/>;
 									})
 								}

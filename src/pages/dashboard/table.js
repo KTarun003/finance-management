@@ -1,30 +1,8 @@
 import React, {Component} from 'react';
 import TableRow from './tableRow';
+import {setBadge} from "../../helpers/ui";
 
-let loan = {
-	name: "Sandra",
-	principle: 25000,
-	interest: 2500,
-	status: "Paid"
-};
-let badge = "badge badge-success";
 class Table extends Component {
-
-	setBadge(l){
-		if(l.status === "Not Paid"){
-			l.statusBadge = "badge badge-warning"
-		}
-		else if(l.status === "Interest Paid"){
-			l.statusBadge = "badge badge-info"
-		}
-		else if(l.status === "Paid"){
-			l.statusBadge = "badge badge-success"
-		}
-		else {
-			l.status = "Error";
-			l.statusBadge = "badge badge-danger";
-		}
-	}
 
 	render() {
 		return (
@@ -41,12 +19,11 @@ class Table extends Component {
 									<th>Principle</th>
 									<th>Interest</th>
 									<th>Status</th>
-									<th>Recover</th>
 								</tr>
 							</thead>
 							<tbody>
 							{this.props.loans.map(l =>{
-
+										l.statusBadge = setBadge(l);
 								return	<TableRow className="text-white" key={l.id} loan={l} statusBadge={l.statusBadge} />
 								}
 							)}

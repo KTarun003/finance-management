@@ -34,12 +34,6 @@ class Sidebar extends Component {
 							</li>
 							<li className="app-sidebar__heading">Recovery</li>
 							<li>
-								<Link to="/principle" >
-									<i className="metismenu-icon pe-7s-cash">
-									</i>Principle Recovery
-								</Link>
-							</li>
-							<li>
 								<Link to="/interest" >
 									<i className="metismenu-icon pe-7s-cash">
 									</i>Interest Recovery
